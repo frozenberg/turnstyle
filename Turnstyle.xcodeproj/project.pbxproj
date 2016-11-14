@@ -15,7 +15,7 @@
 		1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */; };
 		1369B1DC1DD91CA000A212E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DB1DD91CA000A212E9 /* Event.swift */; };
 		1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DD1DD91DC200A212E9 /* Ticket.swift */; };
-		7C1757481DDA331B00BECA1E /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info-2.plist */; };
+		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
 		DE1B39E16A4D2EC20A71ACE2 /* Pods_Turnstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		1369B1DD1DD91DC200A212E9 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		3CB80A77E508C0FCE5FC9B3A /* Pods-Turnstyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.release.xcconfig"; sourceTree = "<group>"; };
 		42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turnstyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C1757471DDA331B00BECA1E /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84E56FCB453B4566FC914292 /* Pods-Turnstyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +69,7 @@
 		1369B1C61DD91BC100A212E9 /* Turnstyle */ = {
 			isa = PBXGroup;
 			children = (
-				7C1757471DDA331B00BECA1E /* GoogleService-Info-2.plist */,
+				7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */,
 				1369B1C71DD91BC200A212E9 /* AppDelegate.swift */,
 				1369B1C91DD91BC200A212E9 /* EventsViewController.swift */,
 				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
@@ -164,7 +164,7 @@
 			files = (
 				1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */,
 				1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */,
-				7C1757481DDA331B00BECA1E /* GoogleService-Info-2.plist in Resources */,
+				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,
 				1369B1CF1DD91BC200A212E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

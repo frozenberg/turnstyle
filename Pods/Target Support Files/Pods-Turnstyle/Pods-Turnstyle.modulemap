@@ -1,0 +1,6 @@
+framework module Pods_Turnstyle {
+  umbrella header "Pods-Turnstyle-umbrella.h"
+
+  export *
+  module * { export * }
+}

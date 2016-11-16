@@ -16,6 +16,8 @@
 		1369B1DC1DD91CA000A212E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DB1DD91CA000A212E9 /* Event.swift */; };
 		1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DD1DD91DC200A212E9 /* Ticket.swift */; };
 		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
+		7CEA39131DDCD87D00599F5A /* eventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA39111DDCD87D00599F5A /* eventForm.swift */; };
+		7CEA39141DDCD87D00599F5A /* eventForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA39121DDCD87D00599F5A /* eventForm.xib */; };
 		DE1B39E16A4D2EC20A71ACE2 /* Pods_Turnstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,10 @@
 		3CB80A77E508C0FCE5FC9B3A /* Pods-Turnstyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.release.xcconfig"; sourceTree = "<group>"; };
 		42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turnstyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CEA39111DDCD87D00599F5A /* eventForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventForm.swift; sourceTree = "<group>"; };
+		7CEA39121DDCD87D00599F5A /* eventForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventForm.xib; sourceTree = "<group>"; };
+		7CEA39151DDCDE2700599F5A /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/Turnstyle-cebixxxqotyidrhfbyyhxtkddpig/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
+		7CEA39171DDCDE2B00599F5A /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "../../Library/Developer/Xcode/DerivedData/Turnstyle-cebixxxqotyidrhfbyyhxtkddpig/Build/Products/Debug-iphonesimulator/Stripe/Stripe.framework"; sourceTree = "<group>"; };
 		84E56FCB453B4566FC914292 /* Pods-Turnstyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +80,8 @@
 				1369B1C91DD91BC200A212E9 /* EventsViewController.swift */,
 				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
 				1369B1CD1DD91BC200A212E9 /* Main.storyboard */,
+				7CEA39111DDCD87D00599F5A /* eventForm.swift */,
+				7CEA39121DDCD87D00599F5A /* eventForm.xib */,
 				1369B1D01DD91BC200A212E9 /* Assets.xcassets */,
 				1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */,
 				1369B1D51DD91BC200A212E9 /* Info.plist */,
@@ -86,6 +94,8 @@
 		2994F92FEB2EC6829A49B522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CEA39171DDCDE2B00599F5A /* Stripe.framework */,
+				7CEA39151DDCDE2700599F5A /* GoogleToolboxForMac.framework */,
 				42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */,
 			);
 			name = Frameworks;
@@ -163,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */,
+				7CEA39141DDCD87D00599F5A /* eventForm.xib in Resources */,
 				1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */,
 				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,
 				1369B1CF1DD91BC200A212E9 /* Main.storyboard in Resources */,
@@ -228,6 +239,7 @@
 				1369B1CC1DD91BC200A212E9 /* TicketsViewController.swift in Sources */,
 				1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */,
 				1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */,
+				7CEA39131DDCD87D00599F5A /* eventForm.swift in Sources */,
 				1369B1CA1DD91BC200A212E9 /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

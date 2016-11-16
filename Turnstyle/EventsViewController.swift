@@ -9,9 +9,20 @@ import UIKit
 
 class EventsViewController: UIViewController {
 
-    @IBAction func addEvent(_ sender: Any) {
-        
+
+    
+    @IBOutlet var tableViewOut: UITableView!
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition{
+        return .topAttached;
     }
+
+
+    @IBAction func addEvent(_ sender: Any) {
+        let eventCreater = eventForm()
+        self.navigationController?.pushViewController(eventCreater, animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

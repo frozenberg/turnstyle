@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Aas-rz-KwV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,40 +13,45 @@
         <scene sceneID="oBu-Oe-PWx">
             <objects>
                 <viewController id="TTd-XE-ZGa" customClass="EventsViewController" customModule="Turnstyle" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="DBd-5O-lbh">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="dPb-kt-OSB">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ONh-hV-dn1">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+"/>
-                            </button>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eJw-Xd-nP1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="GKh-aJ-fAk">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="FS4-xv-R9T">
                             <connections>
-                                <action selector="addEvent:" destination="TTd-XE-ZGa" id="ggC-Yt-HXM"/>
+                                <action selector="addEvent:" destination="TTd-XE-ZGa" id="sXO-pt-H8a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableViewOut" destination="eJw-Xd-nP1" id="iTd-3x-Egg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Je-d7-SVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893.60000000000002" y="101.19940029985008"/>
+            <point key="canvasLocation" x="1832.8" y="101.19940029985008"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0CY-GM-CfN">
+        <scene sceneID="5SY-3H-r9p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NOD-AT-bg8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aas-rz-KwV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdv-ce-wfw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DBw-Qa-yw8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="TTd-XE-ZGa" kind="relationship" relationship="rootViewController" id="GfE-6n-tds"/>
+                        <segue destination="TTd-XE-ZGa" kind="relationship" relationship="rootViewController" id="Qpq-Ed-Ajx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="81y-sa-Hz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpc-zu-Pyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45.600000000000001" y="101.19940029985008"/>
+            <point key="canvasLocation" x="893.60000000000002" y="101.19940029985008"/>
         </scene>
     </scenes>
 </document>

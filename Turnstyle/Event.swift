@@ -17,11 +17,39 @@ struct Event{
     var host : String
     var name : String
     var location : String
-    var eventDate : NSDate
+    var eventDate : Date
     var description : String
     var url : String
-    var createdDate : NSDate
-    var eventTime : NSDate //NSDate object stores date and time, to use for time simply ignore date
+    var createdDate : Date
+    var eventTime : Date //NSDate object stores date and time, to use for time simply ignore date
     
-    //TODO constructor
+    init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String, eventTime: Date){
+        self.eventID = 0 //fix
+        self.ticketCost = cost
+        self.ticketsLeft = ticketsLeft
+        self.host = host
+        self.name = name
+        self.location = location
+        self.eventDate = eventDate
+        self.description = description
+        self.url = url
+        self.createdDate = Date()
+        self.eventTime = eventTime
+    }
+
+    func toAnyObject() -> Any {
+        return [
+            "eventId": eventID,
+            "ticketCost" : ticketCost,
+            "ticketsLeft" : ticketsLeft,
+            "host" : host,
+            "name": name,
+            "location" : location,
+            "eventDate" : eventDate.description,
+            "description" : description,
+            "url" : url,
+            "createdDate" : createdDate.description,
+            "eventTime" : eventTime.description
+        ]
+    }
 }

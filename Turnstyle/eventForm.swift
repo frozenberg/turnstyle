@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class eventForm: UIViewController {
     
@@ -18,7 +19,21 @@ class eventForm: UIViewController {
     @IBOutlet weak var dateOut: UIDatePicker!
     @IBOutlet weak var descriptionOut: UITextView!
     
+    
+    let FIREBASE_REF = FIRDatabase.database().reference()
+    
     @IBAction func createEvent(_ sender: Any) {
+        let hostName = hostNameOut.text
+        let eventName = eventNameOut.text
+        let location = locationOut.text
+        let price = priceOut.text
+        let numTix = numTixOut.text
+        let date = dateOut.date
+        let description = descriptionOut.text
+        let newEvent = Event(cost: 5.0, ticketsLeft: 10, host: hostName!, name: eventName!, location: location!, eventDate: date, description: description!, url: "turnstyle.com", eventTime: Date())
+        let EVENTS_REF = FIREBASE_REF.child("events")
+        let firstChild = EVENTS_REF.childByAutoId()
+        firstChild.setValue(newEvent.toAnyObject())
     }
     
     

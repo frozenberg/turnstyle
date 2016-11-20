@@ -7,6 +7,7 @@ target 'Turnstyle' do
 
   # Pods for Turnstyle
 pod 'Firebase/Core'
+pod 'Firebase/Database'
 pod 'Stripe'
 
 end

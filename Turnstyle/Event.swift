@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Firebase
 
 struct Event{
     
-    var eventID : Int
+    var eventID : String
     var ticketCost : Double
     var ticketsLeft : Int
     
@@ -21,10 +22,10 @@ struct Event{
     var description : String
     var url : String
     var createdDate : Date
-    var eventTime : Date //NSDate object stores date and time, to use for time simply ignore date
+    var eventTime : Date //Date object stores date and time, to use for time simply ignore date
     
     init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String, eventTime: Date){
-        self.eventID = 0 //fix
+        self.eventID = "0" //fix
         self.ticketCost = cost
         self.ticketsLeft = ticketsLeft
         self.host = host
@@ -51,5 +52,30 @@ struct Event{
             "createdDate" : createdDate.description,
             "eventTime" : eventTime.description
         ]
+    }
+    
+    func getName() -> String {
+        return self.name
+    }
+    
+    //FIX ALL DATES FOR THE LOVE OF GOD
+    init(snapshot: FIRDataSnapshot){
+        self.eventID = snapshot.key
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        
+        self.ticketCost = snapshotValue["ticketCost"] as! Double
+        self.ticketsLeft = snapshotValue["ticketsLeft"] as! Int
+        self.host = snapshotValue["host"] as! String
+        self.name = snapshotValue["name"] as! String
+        self.location = snapshotValue["location"] as! String
+//        self.eventDate = snapshotValue["eventDate"] as! Date
+        self.eventDate = Date()
+        self.description = snapshotValue["description"] as! String
+        self.url = snapshotValue["url"] as! String
+//        self.createdDate = snapshotValue["createdDate"] as! Date
+        self.createdDate = Date()
+//        self.eventTime = snapshotValue["eventTime"] as! Date
+        self.eventTime = Date()
+        
     }
 }

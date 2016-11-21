@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
 
     
     @IBOutlet var tableViewOut: UITableView!
-    var eventArray = ["event1"]
+    var eventArray : [Event] = []
+    let FIREBASE_REF = FIRDatabase.database().reference()
     
     
     func position(for bar: UIBarPositioning) -> UIBarPosition{
@@ -37,7 +39,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let myCell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
-        myCell.textLabel!.text = eventArray[indexPath.row]
+        myCell.textLabel!.text = eventArray[indexPath.row].getName()
         
         return myCell
         
@@ -45,8 +47,9 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected")
-        let EventDetails = EventDetailView()
-        self.navigationController?.pushViewController(EventDetails, animated: true)
+        let EventDetailVC = EventDetailView()
+        EventDetailVC.event = eventArray[indexPath.row]
+        self.navigationController?.pushViewController(EventDetailVC, animated: true)
     }
     
     override func viewDidLoad() {
@@ -54,6 +57,19 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tableViewOut.reloadData()
         tableViewOut.dataSource = self
         tableViewOut.delegate = self
+        
+        let EVENTS_REF = FIREBASE_REF.child("events")
+        EVENTS_REF.observe(.value, with: { snapshot in
+            var newEvents: [Event] = []
+            for item in snapshot.children {
+                let newEvent = Event(snapshot: item as! FIRDataSnapshot)
+                print(newEvent.getName())
+                newEvents.append(newEvent)
+            }
+            self.eventArray = newEvents
+            self.tableViewOut.reloadData()
+        })
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

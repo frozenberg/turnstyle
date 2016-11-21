@@ -47,9 +47,9 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected")
-        let EventDetailVC = EventDetailView()
-        EventDetailVC.event = eventArray[indexPath.row]
-        self.navigationController?.pushViewController(EventDetailVC, animated: true)
+        let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
+        eventDetailVC.event = eventArray[indexPath.row]
+        self.navigationController?.pushViewController(eventDetailVC, animated: true)
     }
     
     override func viewDidLoad() {

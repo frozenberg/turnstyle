@@ -14,12 +14,13 @@ class EventDetailView: UIViewController {
     @IBOutlet weak var host: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var description: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var url: UILabel!
+    @IBOutlet weak var detailDescription: UILabel!
     
-    var event: Event
+    var event: Event? = nil
+    
     
     @IBAction func purchaseTicket(_ sender: Any) {
     }
@@ -27,14 +28,14 @@ class EventDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        name.text = event.name
-        host.text = event.host
-        price.text = event.ticketCost as! String
-        location.text = event.location
-        description.text = event.description
-        date.text = event.eventDate as! String
-        time.text = event.eventTime as! String
-        url.text = event.url
+        name.text = event!.name
+        host.text = "Host: \(event!.host)"
+        price.text = "Price: \(event!.ticketCost.description)"
+        location.text = "Location: \(event!.location)"
+        detailDescription.text = "Description: \(event!.description)"
+        date.text = "Date: \(event!.eventDate.description)"
+        time.text = "Time: \(event!.eventTime.description)"
+        url.text = "URL: \(event!.url)"
         
         // Do any additional setup after loading the view.
     }

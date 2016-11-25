@@ -6,23 +6,23 @@
 	<dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Turnstyle.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Stripe-Stripe.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Stripe.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -37,27 +37,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8843A2CE991506B19800E7D15E33376E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>91EA1C887FF8D24D0A45CB298F27AA6B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>92BB131FA876445E027D20AE23EA7B5F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B5A0328BD584307D1EF8EE6BBC4D6451</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3E70F9A068A64AE39894E8F8AA9AA16</key>
 		<dict>
 			<key>primary</key>
 			<true/>

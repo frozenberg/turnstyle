@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1304DE081DE45F420003A7FC /* DatabaseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304DE071DE45F420003A7FC /* DatabaseOperations.swift */; };
+		133618A41DE37531003277CB /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133618A31DE37531003277CB /* Globals.swift */; };
 		1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1C71DD91BC200A212E9 /* AppDelegate.swift */; };
 		1369B1CA1DD91BC200A212E9 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1C91DD91BC200A212E9 /* EventsViewController.swift */; };
 		1369B1CC1DD91BC200A212E9 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */; };
@@ -18,12 +20,14 @@
 		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
 		7C1FC9561DE251CB007DEFA0 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */; };
 		7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */; };
-		7CEA39131DDCD87D00599F5A /* eventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA39111DDCD87D00599F5A /* eventForm.swift */; };
-		7CEA39141DDCD87D00599F5A /* eventForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA39121DDCD87D00599F5A /* eventForm.xib */; };
+		7CEA39131DDCD87D00599F5A /* EventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA39111DDCD87D00599F5A /* EventForm.swift */; };
+		7CEA39141DDCD87D00599F5A /* EventForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA39121DDCD87D00599F5A /* EventForm.xib */; };
 		DE1B39E16A4D2EC20A71ACE2 /* Pods_Turnstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1304DE071DE45F420003A7FC /* DatabaseOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseOperations.swift; sourceTree = "<group>"; };
+		133618A31DE37531003277CB /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		1369B1C41DD91BC100A212E9 /* Turnstyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turnstyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1369B1C71DD91BC200A212E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1369B1C91DD91BC200A212E9 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -39,8 +43,8 @@
 		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailView.xib; sourceTree = "<group>"; };
-		7CEA39111DDCD87D00599F5A /* eventForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventForm.swift; sourceTree = "<group>"; };
-		7CEA39121DDCD87D00599F5A /* eventForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventForm.xib; sourceTree = "<group>"; };
+		7CEA39111DDCD87D00599F5A /* EventForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventForm.swift; sourceTree = "<group>"; };
+		7CEA39121DDCD87D00599F5A /* EventForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventForm.xib; sourceTree = "<group>"; };
 		7CEA39151DDCDE2700599F5A /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/Turnstyle-cebixxxqotyidrhfbyyhxtkddpig/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
 		7CEA39171DDCDE2B00599F5A /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "../../Library/Developer/Xcode/DerivedData/Turnstyle-cebixxxqotyidrhfbyyhxtkddpig/Build/Products/Debug-iphonesimulator/Stripe/Stripe.framework"; sourceTree = "<group>"; };
 		84E56FCB453B4566FC914292 /* Pods-Turnstyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,13 +90,15 @@
 				7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */,
 				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
 				1369B1CD1DD91BC200A212E9 /* Main.storyboard */,
-				7CEA39111DDCD87D00599F5A /* eventForm.swift */,
-				7CEA39121DDCD87D00599F5A /* eventForm.xib */,
+				7CEA39111DDCD87D00599F5A /* EventForm.swift */,
+				7CEA39121DDCD87D00599F5A /* EventForm.xib */,
 				1369B1D01DD91BC200A212E9 /* Assets.xcassets */,
 				1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */,
 				1369B1D51DD91BC200A212E9 /* Info.plist */,
 				1369B1DB1DD91CA000A212E9 /* Event.swift */,
 				1369B1DD1DD91DC200A212E9 /* Ticket.swift */,
+				133618A31DE37531003277CB /* Globals.swift */,
+				1304DE071DE45F420003A7FC /* DatabaseOperations.swift */,
 			);
 			path = Turnstyle;
 			sourceTree = "<group>";
@@ -179,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */,
-				7CEA39141DDCD87D00599F5A /* eventForm.xib in Resources */,
+				7CEA39141DDCD87D00599F5A /* EventForm.xib in Resources */,
 				7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */,
 				1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */,
 				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,
@@ -246,7 +252,9 @@
 				1369B1CC1DD91BC200A212E9 /* TicketsViewController.swift in Sources */,
 				1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */,
 				1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */,
-				7CEA39131DDCD87D00599F5A /* eventForm.swift in Sources */,
+				1304DE081DE45F420003A7FC /* DatabaseOperations.swift in Sources */,
+				133618A41DE37531003277CB /* Globals.swift in Sources */,
+				7CEA39131DDCD87D00599F5A /* EventForm.swift in Sources */,
 				1369B1CA1DD91BC200A212E9 /* EventsViewController.swift in Sources */,
 				7C1FC9561DE251CB007DEFA0 /* EventDetailView.swift in Sources */,
 			);

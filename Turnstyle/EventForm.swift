@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class eventForm: UIViewController {
+class EventForm: UIViewController {
     
     @IBOutlet weak var hostNameOut: UITextField!
     @IBOutlet weak var eventNameOut: UITextField!
@@ -20,20 +20,39 @@ class eventForm: UIViewController {
     @IBOutlet weak var descriptionOut: UITextView!
     
     
-    let FIREBASE_REF = FIRDatabase.database().reference()
-    
     @IBAction func createEvent(_ sender: Any) {
+        //TODO check all of these for no user input
         let hostName = hostNameOut.text
         let eventName = eventNameOut.text
         let location = locationOut.text
+        
+        //TODO convert price string to Double
         let price = priceOut.text
+        
+        //TODO convert numTix string to Int
         let numTix = numTixOut.text
+        
         let date = dateOut.date
         let description = descriptionOut.text
-        let newEvent = Event(cost: 5.0, ticketsLeft: 10, host: hostName!, name: eventName!, location: location!, eventDate: date, description: description!, url: "turnstyle.com", eventTime: Date())
-        let EVENTS_REF = FIREBASE_REF.child("events")
-        let firstChild = EVENTS_REF.childByAutoId()
-        firstChild.setValue(newEvent.toAnyObject())
+        
+        //TODO url generation
+        
+        let newEvent = Event(cost: 5.0,
+                             ticketsLeft: 10,
+                             host: hostName!,
+                             name: eventName!,
+                             location: location!,
+                             eventDate: date,
+                             description: description!,
+                             url: "turnstyle.com",
+                             eventTime: Date())
+        
+        let EVENTS_REF = Globals.FIREBASE_REF.child("events")
+        let newEventEntry = EVENTS_REF.childByAutoId()
+        
+        //TODO newEvent.setId(newEventEntry.getId())
+        
+        newEventEntry.setValue(newEvent.toAnyObject())
     }
     
     

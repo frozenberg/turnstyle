@@ -23,8 +23,8 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
 
     @IBAction func addEvent(_ sender: Any) {
-        let eventCreater = eventForm()
-        self.navigationController?.pushViewController(eventCreater, animated: true)
+        let eventFormViewController = EventForm(nibName: "EventForm", bundle: nil)
+        self.navigationController?.pushViewController(eventFormViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,10 +32,6 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // let myCell = tableView.dequeueReusableCellWithIdentifier("theCell")! as UITableViewCell
-        
-        print("in cellForRow at \(indexPath)")
         
         let myCell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
@@ -46,7 +42,6 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected")
         let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
         eventDetailVC.event = eventArray[indexPath.row]
         self.navigationController?.pushViewController(eventDetailVC, animated: true)
@@ -58,17 +53,19 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tableViewOut.dataSource = self
         tableViewOut.delegate = self
         
-        let EVENTS_REF = FIREBASE_REF.child("events")
-        EVENTS_REF.observe(.value, with: { snapshot in
-            var newEvents: [Event] = []
-            for item in snapshot.children {
-                let newEvent = Event(snapshot: item as! FIRDataSnapshot)
-                print(newEvent.getName())
-                newEvents.append(newEvent)
-            }
-            self.eventArray = newEvents
-            self.tableViewOut.reloadData()
-        })
+//        let EVENTS_REF = FIREBASE_REF.child("events")
+//        EVENTS_REF.observe(.value, with: { snapshot in
+//            var newEvents: [Event] = []
+//            for item in snapshot.children {
+//                let newEvent = Event(snapshot: item as! FIRDataSnapshot)
+//                print(newEvent.getName())
+//                newEvents.append(newEvent)
+//            }
+//            self.eventArray = newEvents
+//            self.tableViewOut.reloadData()
+//        })
+        
+        self.eventArray = DatabaseOperations.getEvents(reload: self.tableViewOut.reloadData())
         
         // Do any additional setup after loading the view, typically from a nib.
     }

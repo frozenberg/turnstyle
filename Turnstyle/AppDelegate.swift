@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init(){
         super.init()
         FIRApp.configure()
+        Globals.initialize()
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

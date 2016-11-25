@@ -25,6 +25,7 @@ struct Event{
     var eventTime : Date //Date object stores date and time, to use for time simply ignore date
     
     init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String, eventTime: Date){
+        
         self.eventID = "0" //fix
         self.ticketCost = cost
         self.ticketsLeft = ticketsLeft

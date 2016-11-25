@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E3E70F9A068A64AE39894E8F8AA9AA16"
+               BlueprintIdentifier = "FD74DBD14FA060BBE943A179DEF488BE"
                BuildableName = "Pods_Turnstyle.framework"
                BlueprintName = "Pods-Turnstyle"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E3E70F9A068A64AE39894E8F8AA9AA16"
+            BlueprintIdentifier = "FD74DBD14FA060BBE943A179DEF488BE"
             BuildableName = "Pods_Turnstyle.framework"
             BlueprintName = "Pods-Turnstyle"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E3E70F9A068A64AE39894E8F8AA9AA16"
-            BuildableName = "Pods_Turnstyle.framework"
-            BlueprintName = "Pods-Turnstyle"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

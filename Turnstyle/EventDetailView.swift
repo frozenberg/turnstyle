@@ -19,8 +19,7 @@ class EventDetailView: UIViewController {
     @IBOutlet weak var url: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
     
-    var event: Event? = nil
-    
+    var event: Event? = nil //this event is set by the EventsViewController that pushes the DetailView
     
     @IBAction func purchaseTicket(_ sender: Any) {
     }
@@ -42,18 +41,7 @@ class EventDetailView: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

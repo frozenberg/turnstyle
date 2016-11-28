@@ -26,19 +26,17 @@ class EventForm: UIViewController {
         let eventName = eventNameOut.text
         let location = locationOut.text
         
-        //TODO convert price string to Double
-        let price = priceOut.text
-        
-        //TODO convert numTix string to Int
-        let numTix = numTixOut.text
+        let cost = NumberFormatter().number(from: priceOut.text!)?.doubleValue
+
+        let numTix = NumberFormatter().number(from: numTixOut.text!)?.intValue
         
         let date = dateOut.date
         let description = descriptionOut.text
         
         //TODO url generation
         
-        var newEvent = Event(cost: 5.0,
-                             ticketsLeft: 10,
+        var newEvent = Event(cost: cost!,
+                             ticketsLeft: numTix!,
                              host: hostName!,
                              name: eventName!,
                              location: location!,

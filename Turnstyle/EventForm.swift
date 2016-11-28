@@ -37,7 +37,7 @@ class EventForm: UIViewController {
         
         //TODO url generation
         
-        let newEvent = Event(cost: 5.0,
+        var newEvent = Event(cost: 5.0,
                              ticketsLeft: 10,
                              host: hostName!,
                              name: eventName!,
@@ -47,12 +47,12 @@ class EventForm: UIViewController {
                              url: "turnstyle.com",
                              eventTime: Date())
         
-        let EVENTS_REF = Globals.FIREBASE_REF.child("events")
-        let newEventEntry = EVENTS_REF.childByAutoId()
+        let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
+        let newEventEntry = EVENTS_REF?.childByAutoId()
         
-        //TODO newEvent.setId(newEventEntry.getId())
+        newEvent.setId(id: newEventEntry!.key)
         
-        newEventEntry.setValue(newEvent.toAnyObject())
+        newEventEntry?.setValue(newEvent.toAnyObject())
     }
     
     

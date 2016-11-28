@@ -53,19 +53,11 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tableViewOut.dataSource = self
         tableViewOut.delegate = self
         
-//        let EVENTS_REF = FIREBASE_REF.child("events")
-//        EVENTS_REF.observe(.value, with: { snapshot in
-//            var newEvents: [Event] = []
-//            for item in snapshot.children {
-//                let newEvent = Event(snapshot: item as! FIRDataSnapshot)
-//                print(newEvent.getName())
-//                newEvents.append(newEvent)
-//            }
-//            self.eventArray = newEvents
-//            self.tableViewOut.reloadData()
-//        })
         
-        self.eventArray = DatabaseOperations.getEvents(reload: self.tableViewOut.reloadData())
+        DatabaseOperations.getEvents(populateArray:{(newEvents: [Event]) in
+            self.eventArray = newEvents
+            self.tableViewOut.reloadData()
+        })
         
         // Do any additional setup after loading the view, typically from a nib.
     }

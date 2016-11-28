@@ -13,18 +13,18 @@ import Firebase
 struct DatabaseOperations {
     
     
+    //param: populateArray(newEvents: [Event]) -> Void
+    //populates newEvents with the Firebase data
     
-    static func getEvents(reload: ()) -> [Event] {
-        let EVENTS_REF = Globals.FIREBASE_REF.child("events")
-        EVENTS_REF.observe(.value, with: { snapshot in
-            var newEvents: [Event] = []
+    static func getEvents(populateArray: @escaping (_ newEvents: [Event]) -> Void){
+        let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
+        var newEvents: [Event] = []
+        EVENTS_REF?.observe(.value, with: { snapshot in
             for item in snapshot.children {
                 let newEvent = Event(snapshot: item as! FIRDataSnapshot)
-                print(newEvent.getName())
                 newEvents.append(newEvent)
             }
-            reload()
-            return newEvents
+            populateArray(newEvents)
         })
     }
 }

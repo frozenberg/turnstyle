@@ -36,6 +36,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let myCell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
         myCell.textLabel!.text = eventArray[indexPath.row].getName()
+        myCell.textLabel!.font = UIFont(name:"BebasNeue", size:18.0)
         
         
         return myCell

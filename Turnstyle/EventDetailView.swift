@@ -24,6 +24,7 @@ class EventDetailView: UIViewController {
     }
 
     override func viewDidLoad() {
+        style()
         super.viewDidLoad()
         
         name.text = event!.name
@@ -41,5 +42,14 @@ class EventDetailView: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func style(){
+        name.font = UIFont(name:"BebasNeue", size:18.0)
+        host.font = UIFont(name:"BebasNeue", size:18.0)
+        price.font = UIFont(name:"BebasNeue", size:18.0)
+        location.font = UIFont(name:"BebasNeue", size:18.0)
+        date.font = UIFont(name:"BebasNeue", size:18.0)
+        url.font = UIFont(name:"BebasNeue", size:18.0)
+        detailDescription.font = UIFont(name:"BebasNeue", size:18.0)
+    }
 
 }

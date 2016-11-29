@@ -37,6 +37,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         myCell.textLabel!.text = eventArray[indexPath.row].getName()
         
+        
         return myCell
         
     }

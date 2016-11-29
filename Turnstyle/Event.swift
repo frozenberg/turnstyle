@@ -22,10 +22,9 @@ struct Event{
     var description : String
     var url : String
     var createdDate : Date
-    var eventTime : Date //Date object stores date and time, to use for time simply ignore date
     
     //constructor for Event from known Event details
-    init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String, eventTime: Date){
+    init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String){
         
         self.eventId = "0" //this is later set in setId, after a new Firebase entry is created by autoChildId
         self.ticketCost = cost
@@ -37,7 +36,6 @@ struct Event{
         self.description = description
         self.url = url
         self.createdDate = Date()
-        self.eventTime = eventTime
     }
     
     //constructor for Events from FIRDataSnapshot (reconstruct Firebase data into Event struct)
@@ -58,7 +56,6 @@ struct Event{
         //        self.createdDate = snapshotValue["createdDate"] as! Date
         self.createdDate = Date()
         //        self.eventTime = snapshotValue["eventTime"] as! Date
-        self.eventTime = Date()
         
     }
     
@@ -79,7 +76,6 @@ struct Event{
             "description" : description,
             "url" : url,
             "createdDate" : createdDate.description,
-            "eventTime" : eventTime.description
         ]
     }
     

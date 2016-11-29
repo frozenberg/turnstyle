@@ -23,6 +23,7 @@ struct DatabaseOperations {
             for item in snapshot.children {
                 let newEvent = Event(snapshot: item as! FIRDataSnapshot)
                 newEvents.append(newEvent)
+                
             }
             populateArray(newEvents)
         })

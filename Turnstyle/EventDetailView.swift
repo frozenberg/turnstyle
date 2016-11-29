@@ -15,7 +15,6 @@ class EventDetailView: UIViewController {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var url: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
     
@@ -33,7 +32,6 @@ class EventDetailView: UIViewController {
         location.text = "Location: \(event!.location)"
         detailDescription.text = "Description: \(event!.description)"
         date.text = "Date: \(event!.eventDate.description)"
-        time.text = "Time: \(event!.eventTime.description)"
         url.text = "URL: \(event!.url)"
         
         // Do any additional setup after loading the view.

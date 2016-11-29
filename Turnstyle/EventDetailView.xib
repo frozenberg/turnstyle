@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,14 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventDetailView" customModule="Turnstyle" customModuleProvider="target">
             <connections>
-                <outlet property="Time" destination="9bM-t4-vwt" id="8bE-h0-Tpi"/>
                 <outlet property="date" destination="txa-Z7-tEn" id="ZQF-9Z-mvo"/>
                 <outlet property="detailDescription" destination="MkX-CY-KQp" id="6eQ-Me-tqI"/>
                 <outlet property="host" destination="eca-z4-M7Q" id="JMw-IK-p4y"/>
                 <outlet property="location" destination="kPG-2U-NzV" id="JvI-Ka-CMD"/>
                 <outlet property="name" destination="QZc-DB-ZUc" id="37O-kX-TSr"/>
                 <outlet property="price" destination="ZIW-vH-xeV" id="4Xy-HI-UyB"/>
-                <outlet property="time" destination="9bM-t4-vwt" id="naq-1F-aOJ"/>
                 <outlet property="url" destination="1Kn-ns-Slf" id="iah-Tw-HZr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -58,18 +56,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-t4-vwt">
-                    <rect key="frame" x="18" y="329" width="331" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-ns-Slf">
-                    <rect key="frame" x="21" y="358" width="329" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFK-oU-kzX">
                     <rect key="frame" x="326" y="718" width="30" height="30"/>
                     <state key="normal" title="Buy"/>
@@ -83,13 +69,17 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-ns-Slf">
+                    <rect key="frame" x="18" y="329" width="329" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="eca-z4-M7Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="1db-dF-bWz"/>
                 <constraint firstItem="kPG-2U-NzV" firstAttribute="trailing" secondItem="MkX-CY-KQp" secondAttribute="trailing" id="2pj-rU-PMR"/>
-                <constraint firstItem="txa-Z7-tEn" firstAttribute="trailing" secondItem="9bM-t4-vwt" secondAttribute="trailing" id="B4O-Xa-6LD"/>
-                <constraint firstItem="txa-Z7-tEn" firstAttribute="leading" secondItem="9bM-t4-vwt" secondAttribute="leading" id="BBF-jf-nlh"/>
                 <constraint firstItem="kPG-2U-NzV" firstAttribute="top" secondItem="ZIW-vH-xeV" secondAttribute="bottom" constant="8" symbolic="YES" id="Dum-RS-6Da"/>
                 <constraint firstItem="1Kn-ns-Slf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="EvE-8i-4Bx"/>
                 <constraint firstAttribute="bottom" secondItem="QFK-oU-kzX" secondAttribute="bottom" constant="-81" id="FcT-cq-Gac"/>
@@ -106,11 +96,9 @@
                 <constraint firstItem="txa-Z7-tEn" firstAttribute="top" secondItem="MkX-CY-KQp" secondAttribute="bottom" constant="8" symbolic="YES" id="epv-bP-nL5"/>
                 <constraint firstItem="MkX-CY-KQp" firstAttribute="leading" secondItem="txa-Z7-tEn" secondAttribute="leading" id="fZK-8s-R2Y"/>
                 <constraint firstAttribute="trailing" secondItem="QFK-oU-kzX" secondAttribute="trailing" constant="19" id="jyw-EE-6js"/>
-                <constraint firstItem="9bM-t4-vwt" firstAttribute="top" secondItem="txa-Z7-tEn" secondAttribute="bottom" constant="2" id="kbO-mC-d1w"/>
                 <constraint firstItem="ZIW-vH-xeV" firstAttribute="leading" secondItem="kPG-2U-NzV" secondAttribute="leading" id="luz-Gv-ub0"/>
                 <constraint firstItem="MkX-CY-KQp" firstAttribute="top" secondItem="kPG-2U-NzV" secondAttribute="bottom" constant="8" symbolic="YES" id="m8J-vK-G0r"/>
                 <constraint firstItem="QZc-DB-ZUc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="niE-Kg-YZ9"/>
-                <constraint firstItem="1Kn-ns-Slf" firstAttribute="top" secondItem="9bM-t4-vwt" secondAttribute="bottom" constant="8" symbolic="YES" id="rEV-UY-ecH"/>
                 <constraint firstAttribute="trailing" secondItem="eca-z4-M7Q" secondAttribute="trailing" constant="26" id="une-ZB-Hjs"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="53.5"/>

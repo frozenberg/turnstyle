@@ -22,7 +22,22 @@ class EventForm: UIViewController {
     
     @IBAction func createEvent(_ sender: Any) {
         //TODO check all of these for no user input
+        
+        hostNameOut.text =  hostNameOut.text?.trimmingCharacters(in: .whitespaces)
+        eventNameOut.text =  eventNameOut.text?.trimmingCharacters(in: .whitespaces)
+        locationOut.text =  locationOut.text?.trimmingCharacters(in: .whitespaces)
+        priceOut.text =  priceOut.text?.trimmingCharacters(in: .whitespaces)
+        numTixOut.text =  numTixOut.text?.trimmingCharacters(in: .whitespaces)
+        
+        if ((hostNameOut.text?.isEmpty)! || (eventNameOut.text?.isEmpty)! || (locationOut.text?.isEmpty)! || (priceOut.text?.isEmpty)! || (numTixOut.text?.isEmpty)!){
+            let popUp = UIAlertController(title: "Invalid Form", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.alert)
+            popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
+            self.present(popUp, animated: true, completion: nil)
+
+        }
+        else{
         let hostName = hostNameOut.text
+        
         let eventName = eventNameOut.text
         let location = locationOut.text
         
@@ -35,28 +50,45 @@ class EventForm: UIViewController {
         
         //TODO url generation
         
-        var newEvent = Event(cost: cost!,
+            if (cost == nil || cost! < 0.0){
+                let popUp = UIAlertController(title: "Invalid Form", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.alert)
+                popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
+                self.present(popUp, animated: true, completion: nil)
+            }
+            
+            else if (numTix == nil || numTix! < 0){
+                let popUp = UIAlertController(title: "Invalid Form", message: "Please enter a valid number of tickets", preferredStyle: UIAlertControllerStyle.alert)
+                popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
+                self.present(popUp, animated: true, completion: nil)
+            }
+                
+            else{
+                var newEvent = Event(cost: cost!,
                              ticketsLeft: numTix!,
                              host: hostName!,
                              name: eventName!,
                              location: location!,
                              eventDate: date,
                              description: description!,
-                             url: "turnstyle.com",
-                             eventTime: Date())
+                             url: "turnstyle.com"
+                            )
         
-        let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
-        let newEventEntry = EVENTS_REF?.childByAutoId()
+                let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
+                let newEventEntry = EVENTS_REF?.childByAutoId()
         
-        newEvent.setId(id: newEventEntry!.key)
+                newEvent.setId(id: newEventEntry!.key)
         
-        newEventEntry?.setValue(newEvent.toAnyObject())
+                newEventEntry?.setValue(newEvent.toAnyObject())
+        }
+        
+                navigationController?.popViewController(animated: true)
+            }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

@@ -20,6 +20,7 @@
 		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
 		7C1FC9561DE251CB007DEFA0 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */; };
 		7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */; };
+		7C7236021DEDE73C007D0D17 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7236011DEDE73C007D0D17 /* BebasNeue.otf */; };
 		7CEA39131DDCD87D00599F5A /* EventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA39111DDCD87D00599F5A /* EventForm.swift */; };
 		7CEA39141DDCD87D00599F5A /* EventForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA39121DDCD87D00599F5A /* EventForm.xib */; };
 		DE1B39E16A4D2EC20A71ACE2 /* Pods_Turnstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */; };
@@ -43,6 +44,7 @@
 		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailView.xib; sourceTree = "<group>"; };
+		7C7236011DEDE73C007D0D17 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		7CEA39111DDCD87D00599F5A /* EventForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventForm.swift; sourceTree = "<group>"; };
 		7CEA39121DDCD87D00599F5A /* EventForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventForm.xib; sourceTree = "<group>"; };
 		7CEA39151DDCDE2700599F5A /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/Turnstyle-cebixxxqotyidrhfbyyhxtkddpig/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				1369B1DD1DD91DC200A212E9 /* Ticket.swift */,
 				133618A31DE37531003277CB /* Globals.swift */,
 				1304DE071DE45F420003A7FC /* DatabaseOperations.swift */,
+				7C7236011DEDE73C007D0D17 /* BebasNeue.otf */,
 			);
 			path = Turnstyle;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				7CEA39141DDCD87D00599F5A /* EventForm.xib in Resources */,
 				7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */,
 				1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */,
+				7C7236021DEDE73C007D0D17 /* BebasNeue.otf in Resources */,
 				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,
 				1369B1CF1DD91BC200A212E9 /* Main.storyboard in Resources */,
 			);

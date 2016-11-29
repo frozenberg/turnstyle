@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EventForm: UIViewController {
+class EventForm: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var hostNameOut: UITextField!
     @IBOutlet weak var eventNameOut: UITextField!
@@ -18,18 +18,24 @@ class EventForm: UIViewController {
     @IBOutlet weak var numTixOut: UITextField!
     @IBOutlet weak var dateOut: UIDatePicker!
     @IBOutlet weak var descriptionOut: UITextView!
+   
+    
     
     
     @IBAction func createEvent(_ sender: Any) {
-        //TODO check all of these for no user input
         
+        
+        //trim whitespace to prevent blank fields
         hostNameOut.text =  hostNameOut.text?.trimmingCharacters(in: .whitespaces)
         eventNameOut.text =  eventNameOut.text?.trimmingCharacters(in: .whitespaces)
         locationOut.text =  locationOut.text?.trimmingCharacters(in: .whitespaces)
         priceOut.text =  priceOut.text?.trimmingCharacters(in: .whitespaces)
         numTixOut.text =  numTixOut.text?.trimmingCharacters(in: .whitespaces)
         
+        //check for user input
         if ((hostNameOut.text?.isEmpty)! || (eventNameOut.text?.isEmpty)! || (locationOut.text?.isEmpty)! || (priceOut.text?.isEmpty)! || (numTixOut.text?.isEmpty)!){
+            
+            //code to create a pop up notifying user of invalid input
             let popUp = UIAlertController(title: "Invalid Form", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.alert)
             popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
             self.present(popUp, animated: true, completion: nil)
@@ -50,13 +56,21 @@ class EventForm: UIViewController {
         
         //TODO url generation
         
+            //check if cost field is a number
             if (cost == nil || cost! < 0.0){
+                priceOut.text = ""
+                
+                //same pop up code
                 let popUp = UIAlertController(title: "Invalid Form", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.alert)
                 popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
                 self.present(popUp, animated: true, completion: nil)
             }
             
+            //check if ticket field is a number
             else if (numTix == nil || numTix! < 0){
+                numTixOut.text = ""
+                
+                //same pop up code
                 let popUp = UIAlertController(title: "Invalid Form", message: "Please enter a valid number of tickets", preferredStyle: UIAlertControllerStyle.alert)
                 popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
                 self.present(popUp, animated: true, completion: nil)
@@ -81,12 +95,51 @@ class EventForm: UIViewController {
                 newEventEntry?.setValue(newEvent.toAnyObject())
         }
         
-                navigationController?.popViewController(animated: true)
+                navigationController?.popViewController(animated: true) //return to previous view
             }
     }
     
     
+    
+    
+    //Additional styling to form
+    func styleForm(){
+        hostNameOut.font = UIFont(name:"BebasNeue", size:15.0)
+        eventNameOut.font = UIFont(name:"BebasNeue", size:15.0)
+        locationOut.font = UIFont(name:"BebasNeue", size:15.0)
+        priceOut.font = UIFont(name:"BebasNeue", size:15.0)
+        numTixOut.font = UIFont(name:"BebasNeue", size:15.0)
+        descriptionOut.text = "Description"
+        descriptionOut.textColor = UIColor.lightGray
+        descriptionOut.font = UIFont(name:"BebasNeue", size:15.0)
+        
+    }
+    
+    
+    
+    //Create Placeholder text for Description Text View
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    //
+    
+    
     override func viewDidLoad() {
+        //styling
+        styleForm()
+        descriptionOut.delegate = self
+        //
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.

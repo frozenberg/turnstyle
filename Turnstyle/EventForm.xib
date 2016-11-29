@@ -15,6 +15,8 @@
                 <outlet property="descriptionOut" destination="IES-aY-D7Z" id="iGR-zi-GpL"/>
                 <outlet property="eventNameOut" destination="whF-hn-b7m" id="OST-v2-hJ4"/>
                 <outlet property="hostNameOut" destination="mHr-GH-BaI" id="8c0-AW-zX3"/>
+                <outlet property="imageOut" destination="f9q-g1-YZh" id="cQO-AS-HlA"/>
+                <outlet property="imageUploadOut" destination="pEv-6L-V8W" id="VxQ-aH-bLR"/>
                 <outlet property="locationOut" destination="jDT-fb-8bA" id="JgB-R9-J59"/>
                 <outlet property="numTixOut" destination="e0i-rY-31b" id="Feg-K2-8Rn"/>
                 <outlet property="priceOut" destination="wZ4-LY-mOb" id="nOJ-3q-kip"/>
@@ -32,22 +34,26 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sw-47-Ahc">
                             <rect key="frame" x="0.0" y="-11" width="375" height="658"/>
                             <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="635878692300261322-1064813558_28176-1" translatesAutoresizingMaskIntoConstraints="NO" id="f9q-g1-YZh">
+                                    <rect key="frame" x="0.0" y="-14" width="376" height="165"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-iQ-vvM">
-                                    <rect key="frame" x="-1" y="154" width="240" height="60"/>
+                                    <rect key="frame" x="-1" y="228" width="240" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBl-hd-V7t">
-                                    <rect key="frame" x="0.0" y="31" width="240" height="90"/>
+                                    <rect key="frame" x="0.0" y="105" width="240" height="90"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Host's Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-GH-BaI">
-                                    <rect key="frame" x="5" y="31" width="370" height="30"/>
+                                    <rect key="frame" x="5" y="105" width="370" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="textColor"/>
@@ -55,15 +61,23 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IES-aY-D7Z">
-                                    <rect key="frame" x="0.0" y="402" width="375" height="128"/>
+                                    <rect key="frame" x="0.0" y="476" width="375" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                 </textView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk4-3I-pEI">
+                                    <rect key="frame" x="8" y="628" width="80" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Creat Event"/>
+                                    <connections>
+                                        <action selector="createEvent:" destination="-1" eventType="touchUpInside" id="5c3-Yb-xrh"/>
+                                    </connections>
+                                </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ4-LY-mOb">
-                                    <rect key="frame" x="5" y="154" width="370" height="30"/>
+                                    <rect key="frame" x="5" y="228" width="370" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="textColor"/>
@@ -71,7 +85,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Number of Tickets" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0i-rY-31b">
-                                    <rect key="frame" x="5" y="184" width="370" height="30"/>
+                                    <rect key="frame" x="5" y="258" width="370" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="textColor"/>
@@ -79,7 +93,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-fb-8bA">
-                                    <rect key="frame" x="5" y="91" width="370" height="30"/>
+                                    <rect key="frame" x="5" y="165" width="370" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="textColor"/>
@@ -87,7 +101,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whF-hn-b7m">
-                                    <rect key="frame" x="5" y="61" width="370" height="30"/>
+                                    <rect key="frame" x="5" y="135" width="370" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="textColor"/>
@@ -95,19 +109,22 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sQK-LS-e0N">
-                                    <rect key="frame" x="0.0" y="241" width="375" height="136"/>
+                                    <rect key="frame" x="0.0" y="315" width="375" height="136"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <date key="date" timeIntervalSinceReferenceDate="501012924.39752799">
                                         <!--2016-11-16 18:15:24 +0000-->
                                     </date>
                                 </datePicker>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk4-3I-pEI">
-                                    <rect key="frame" x="8" y="554" width="80" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEv-6L-V8W">
+                                    <rect key="frame" x="-1" y="-8" width="376" height="115"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Creat Event"/>
+                                    <state key="normal" title="TAP TO UPLOAD IMAGE">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
-                                        <action selector="createEvent:" destination="-1" eventType="touchUpInside" id="5c3-Yb-xrh"/>
+                                        <action selector="uploadImage:" destination="-1" eventType="touchUpInside" id="rZC-qM-Ocr"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -136,4 +153,7 @@
             <point key="canvasLocation" x="81.5" y="60.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="635878692300261322-1064813558_28176-1" width="5616" height="3744"/>
+    </resources>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EventForm: UIViewController, UITextViewDelegate {
+class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var hostNameOut: UITextField!
     @IBOutlet weak var eventNameOut: UITextField!
@@ -18,7 +18,15 @@ class EventForm: UIViewController, UITextViewDelegate {
     @IBOutlet weak var numTixOut: UITextField!
     @IBOutlet weak var dateOut: UIDatePicker!
     @IBOutlet weak var descriptionOut: UITextView!
-   
+
+    @IBOutlet weak var imageOut: UIImageView!
+    
+    // code for uploading images
+    var imageData = Data()
+    var photoURL = NSURL()
+    let imagePicker = UIImagePickerController()
+    let storageRef = FIRStorage.storage().reference()
+    @IBOutlet weak var imageUploadOut: UIButton!
     
     
     
@@ -88,18 +96,45 @@ class EventForm: UIViewController, UITextViewDelegate {
                             )
         
                 let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
+                
                 let newEventEntry = EVENTS_REF?.childByAutoId()
         
                 newEvent.setId(id: newEventEntry!.key)
         
                 newEventEntry?.setValue(newEvent.toAnyObject())
+                
+                
+                //upload pictures to Firebase Storage
+                let eventPictureRef = storageRef.child("eventpictures/" + (newEventEntry?.key)!)
+                eventPictureRef.put(imageData, metadata: nil)
+                
+                
         }
-        
-                navigationController?.popViewController(animated: true) //return to previous view
+                //return to previous view
+                navigationController?.popViewController(animated: true)
             }
     }
     
+    //Code for pulling up image picker and selecting image
+    @IBAction func uploadImage(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+            imageUploadOut.setTitle("", for: .normal)
+        }
+        
+        
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        imageOut.image = selectedImage
+        imageData = UIImagePNGRepresentation(selectedImage)!
+        dismiss(animated: true, completion: nil)
+    }
     
     
     //Additional styling to form
@@ -112,7 +147,7 @@ class EventForm: UIViewController, UITextViewDelegate {
         descriptionOut.text = "Description"
         descriptionOut.textColor = UIColor.lightGray
         descriptionOut.font = UIFont(name:"BebasNeue", size:15.0)
-        
+        imageUploadOut.titleLabel?.font = UIFont(name:"BebasNeue", size:18.0)
     }
     
     
@@ -136,6 +171,7 @@ class EventForm: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         //styling
+        imagePicker.delegate = self
         styleForm()
         descriptionOut.delegate = self
         //

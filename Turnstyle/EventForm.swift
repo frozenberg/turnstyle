@@ -122,7 +122,6 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
-            imageUploadOut.setTitle("", for: .normal)
         }
         
         

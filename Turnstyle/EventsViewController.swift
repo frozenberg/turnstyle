@@ -13,6 +13,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     
     @IBOutlet var tableViewOut: UITableView!
+    
     var eventArray : [Event] = []
     let FIREBASE_REF = FIRDatabase.database().reference()
     
@@ -33,10 +34,13 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let myCell = UITableViewCell(style: .default, reuseIdentifier: nil)
+      // let myCell = UITableViewCell(style: .default, reuseIdentifier: "EventViewCell")
         
-        myCell.textLabel!.text = eventArray[indexPath.row].getName()
-        myCell.textLabel!.font = UIFont(name:"BebasNeue", size:18.0)
+        let myCell = tableViewOut.dequeueReusableCell(withIdentifier: "EventViewCell") as! EventViewCell
+        //myCell.awakeFromNib()
+        
+        myCell.eventNameOut.text = eventArray[indexPath.row].getName()
+        
         
         
         return myCell
@@ -50,6 +54,8 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     override func viewDidLoad() {
+        tableViewOut.register(UINib(nibName: "EventViewCell", bundle: nil), forCellReuseIdentifier: "EventViewCell")
+        
         super.viewDidLoad()
         tableViewOut.reloadData()
         tableViewOut.dataSource = self

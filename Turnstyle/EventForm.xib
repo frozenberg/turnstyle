@@ -71,7 +71,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk4-3I-pEI">
                                     <rect key="frame" x="8" y="628" width="80" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Creat Event"/>
+                                    <state key="normal" title="Creat Event">
+                                        <color key="titleColor" red="0.97935336829999997" green="0.63714206439999999" blue="0.035456921170000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="createEvent:" destination="-1" eventType="touchUpInside" id="5c3-Yb-xrh"/>
                                     </connections>
@@ -128,7 +130,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.91193902091041135" green="0.91193902091041135" blue="0.91193902091041135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="658" id="EBZ-Qj-Hma"/>
                             </constraints>

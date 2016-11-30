@@ -14,6 +14,7 @@ class EventViewCell: UITableViewCell {
     @IBOutlet weak var eventNameOut: UILabel!
     
     @IBOutlet weak var hostingFlagOut: UILabel!
+    @IBOutlet weak var overLayView: UIView!
     
     override func awakeFromNib() {
         eventNameOut.font = UIFont(name:"BebasNeue", size:18.0)
@@ -23,9 +24,21 @@ class EventViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+            let color = overLayView.backgroundColor
+            super.setSelected(selected, animated: animated)
+        
+            if(selected) {
+                    overLayView.backgroundColor = color
+            }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+            let color = overLayView.backgroundColor
+            super.setHighlighted(highlighted, animated: animated)
+        
+            if(highlighted) {
+                    overLayView.backgroundColor = color
+            }
     }
     
 }

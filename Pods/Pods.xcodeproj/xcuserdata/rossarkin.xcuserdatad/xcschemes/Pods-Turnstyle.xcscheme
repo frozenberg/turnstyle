@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84FA244EB60198FA761C8A13E559D090"
+               BlueprintIdentifier = "D21B32D8569A01AF636254FF110100AA"
                BuildableName = "Pods_Turnstyle.framework"
                BlueprintName = "Pods-Turnstyle"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "84FA244EB60198FA761C8A13E559D090"
+            BlueprintIdentifier = "D21B32D8569A01AF636254FF110100AA"
             BuildableName = "Pods_Turnstyle.framework"
             BlueprintName = "Pods-Turnstyle"
             ReferencedContainer = "container:Pods.xcodeproj">

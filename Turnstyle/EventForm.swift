@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -173,6 +174,9 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         imagePicker.delegate = self
         styleForm()
         descriptionOut.delegate = self
+        let sendButton = UIBarButtonItem(title: "Creat Event", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(createEvent(_:)))
+        
+        self.navigationItem.rightBarButtonItem = sendButton
         //
         
         super.viewDidLoad()

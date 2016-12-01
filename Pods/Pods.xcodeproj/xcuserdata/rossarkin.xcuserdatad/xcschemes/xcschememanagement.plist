@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Stripe-Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84FA244EB60198FA761C8A13E559D090</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8C3A772647FCD93685A938CB08D3AB18</key>
+		<key>68700459908DC08D5C47A653D1446647</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB8EE8FD4E7303AF4EDE61906EB65DAE</key>
+		<key>D2132264379150EBE4E1B71A68E82BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D21B32D8569A01AF636254FF110100AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECD0D48A8B8EF1B77D7C42C79A371545</key>
 		<dict>
 			<key>primary</key>
 			<true/>

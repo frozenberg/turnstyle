@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import FirebaseStorageUI
 
 class EventDetailView: UIViewController {
 
@@ -18,13 +21,19 @@ class EventDetailView: UIViewController {
     @IBOutlet weak var url: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
     
+    @IBOutlet weak var eventImage: UIImageView!
+    
     var event: Event? = nil //this event is set by the EventsViewController that pushes the DetailView
+    
+    let storageRef = FIRStorage.storage().reference()
+
     
     @IBAction func purchaseTicket(_ sender: Any) {
     }
 
     override func viewDidLoad() {
         style()
+        loadImage()
         super.viewDidLoad()
         
         name.text = event!.name
@@ -50,6 +59,13 @@ class EventDetailView: UIViewController {
         date.font = UIFont(name:"BebasNeue", size:18.0)
         url.font = UIFont(name:"BebasNeue", size:18.0)
         detailDescription.font = UIFont(name:"BebasNeue", size:18.0)
+    }
+    
+    func loadImage(){
+        
+        let imageID:String = (event?.eventId)!
+        let reference: FIRStorageReference = storageRef.child("eventpictures/\(imageID)")
+        eventImage.sd_setImage(with: reference, placeholderImage: UIImage(imageLiteralResourceName: "635878692300261322-1064813558_28176-1"))
     }
 
 }

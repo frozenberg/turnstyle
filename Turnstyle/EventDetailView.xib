@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="date" destination="txa-Z7-tEn" id="ZQF-9Z-mvo"/>
                 <outlet property="detailDescription" destination="MkX-CY-KQp" id="6eQ-Me-tqI"/>
+                <outlet property="eventImage" destination="vWd-YL-lMY" id="Q0L-09-chg"/>
                 <outlet property="host" destination="eca-z4-M7Q" id="JMw-IK-p4y"/>
                 <outlet property="location" destination="kPG-2U-NzV" id="JvI-Ka-CMD"/>
                 <outlet property="name" destination="QZc-DB-ZUc" id="37O-kX-TSr"/>
@@ -69,12 +70,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-ns-Slf">
-                    <rect key="frame" x="18" y="329" width="329" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-ns-Slf">
+                    <rect key="frame" x="21" y="329" width="329" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vWd-YL-lMY">
+                    <rect key="frame" x="0.0" y="20" width="375" height="92"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -99,6 +104,7 @@
                 <constraint firstItem="ZIW-vH-xeV" firstAttribute="leading" secondItem="kPG-2U-NzV" secondAttribute="leading" id="luz-Gv-ub0"/>
                 <constraint firstItem="MkX-CY-KQp" firstAttribute="top" secondItem="kPG-2U-NzV" secondAttribute="bottom" constant="8" symbolic="YES" id="m8J-vK-G0r"/>
                 <constraint firstItem="QZc-DB-ZUc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="niE-Kg-YZ9"/>
+                <constraint firstItem="1Kn-ns-Slf" firstAttribute="top" secondItem="txa-Z7-tEn" secondAttribute="bottom" constant="2" id="pgm-As-fro"/>
                 <constraint firstAttribute="trailing" secondItem="eca-z4-M7Q" secondAttribute="trailing" constant="26" id="une-ZB-Hjs"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="53.5"/>

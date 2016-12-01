@@ -9,6 +9,7 @@ target 'Turnstyle' do
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
+pod 'FirebaseUI/Storage', '~> 0.6'
 pod 'Stripe'
 
 end

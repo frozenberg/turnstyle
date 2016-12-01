@@ -16,7 +16,13 @@ class EventViewCell: UITableViewCell {
     @IBOutlet weak var hostingFlagOut: UILabel!
     @IBOutlet weak var overLayView: UIView!
     
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var transparentBox: UIView!
+    
+    
     override func awakeFromNib() {
+        
+        
         eventNameOut.font = UIFont(name:"BebasNeue", size:18.0)
         hostingFlagOut.font = UIFont(name:"BebasNeue", size:18.0)
         super.awakeFromNib()
@@ -24,11 +30,13 @@ class EventViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-            let color = overLayView.backgroundColor
+            let color = lineView.backgroundColor
             super.setSelected(selected, animated: animated)
         
             if(selected) {
+                    lineView.backgroundColor = color
                     overLayView.backgroundColor = color
+                    transparentBox.backgroundColor = color
             }
     }
     
@@ -38,7 +46,10 @@ class EventViewCell: UITableViewCell {
         
             if(highlighted) {
                     overLayView.backgroundColor = color
+                
             }
     }
+    
+
     
 }

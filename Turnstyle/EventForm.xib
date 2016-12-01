@@ -61,23 +61,13 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IES-aY-D7Z">
-                                    <rect key="frame" x="0.0" y="476" width="375" height="128"/>
+                                    <rect key="frame" x="0.0" y="476" width="375" height="153"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                 </textView>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk4-3I-pEI">
-                                    <rect key="frame" x="8" y="628" width="80" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Creat Event">
-                                        <color key="titleColor" red="0.97935336829999997" green="0.63714206439999999" blue="0.035456921170000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="createEvent:" destination="-1" eventType="touchUpInside" id="5c3-Yb-xrh"/>
-                                    </connections>
-                                </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ4-LY-mOb">
                                     <rect key="frame" x="5" y="228" width="370" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,7 +142,7 @@
                 <constraint firstAttribute="bottom" secondItem="56m-7H-dLv" secondAttribute="bottom" id="tsV-NF-DPU"/>
                 <constraint firstItem="56m-7H-dLv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yGJ-VU-NHa"/>
             </constraints>
-            <point key="canvasLocation" x="81.5" y="60.5"/>
+            <point key="canvasLocation" x="81.5" y="114.5"/>
         </view>
     </objects>
     <resources>

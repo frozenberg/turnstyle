@@ -22,8 +22,11 @@ struct Event{
     var description : String
     var url : String
     var createdDate : Date
+    var hostId : String
+    var attendeeList : [String]
     
     //constructor for Event from known Event details
+    //for entry into Firebase
     init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String){
         
         self.eventId = "0" //this is later set in setId, after a new Firebase entry is created by autoChildId
@@ -36,6 +39,8 @@ struct Event{
         self.description = description
         self.url = url
         self.createdDate = Date()
+        self.hostId = Globals.USERID
+        self.attendeeList = []
     }
     
     //constructor for Events from FIRDataSnapshot (reconstruct Firebase data into Event struct)
@@ -49,14 +54,20 @@ struct Event{
         self.host = snapshotValue["host"] as! String
         self.name = snapshotValue["name"] as! String
         self.location = snapshotValue["location"] as! String
+        
+        self.description = snapshotValue["description"] as! String
+        
+        //FIX FIX FIX
         //        self.eventDate = snapshotValue["eventDate"] as! Date
         self.eventDate = Date()
-        self.description = snapshotValue["description"] as! String
         self.url = snapshotValue["url"] as! String
         //        self.createdDate = snapshotValue["createdDate"] as! Date
         self.createdDate = Date()
         //        self.eventTime = snapshotValue["eventTime"] as! Date
+        //FIX FIX FIX
         
+        self.hostId = snapshotValue["hostID"] as! String
+        self.attendeeList = snapshotValue["attendeeList"] as! [String]
     }
     
     mutating func setId(id: String){
@@ -76,9 +87,10 @@ struct Event{
             "description" : description,
             "url" : url,
             "createdDate" : createdDate.description,
+            "hostId" : hostId,
+            "attendeeList" : attendeeList
         ]
     }
-    
     
     
     func getName() -> String {

@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-Turnstyle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,17 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>27719D4572C7140BACA0B7AB51CFE2BF</key>
+		<key>197E08BD579B55D9DFF48CBC94B7FEDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91EA1C887FF8D24D0A45CB298F27AA6B</key>
+		<key>800E2287DB2B8E1024E65E8BC6D37194</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD74DBD14FA060BBE943A179DEF488BE</key>
+		<key>B3EE68E766A5F9A1D29B32DB4BD90C5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8E4406D8DB16FC13B4E0B0A88D6E5D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

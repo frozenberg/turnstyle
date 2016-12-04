@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E8E4406D8DB16FC13B4E0B0A88D6E5D9'
-               BlueprintName = 'Stripe-Stripe'
+               BlueprintIdentifier = 'C052BEBFBD0AB5218CC64BA3450F6547'
+               BlueprintName = 'GTMSessionFetcher'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Stripe.bundle'>
+               BuildableName = 'GTMSessionFetcher.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

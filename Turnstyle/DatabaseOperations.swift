@@ -16,14 +16,19 @@ struct DatabaseOperations {
     //param: populateArray(newEvents: [Event]) -> Void
     //populates newEvents with the Firebase data
     
+    
+    //idea: change [Event] to [(Event, attending: Bool)] to automatically encode
+    //  whether or not you are hosting or attending
+    
     static func getEvents(populateArray: @escaping (_ newEvents: [Event]) -> Void){
         let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
         var newEvents: [Event] = []
         EVENTS_REF?.observe(.value, with: { snapshot in
             for item in snapshot.children {
                 let newEvent = Event(snapshot: item as! FIRDataSnapshot)
-                newEvents.append(newEvent)
-                
+                if(newEvent.hostId == Globals.USERID){
+                    newEvents.append(newEvent)
+                }
             }
             populateArray(newEvents)
         })

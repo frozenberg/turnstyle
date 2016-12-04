@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1304DE081DE45F420003A7FC /* DatabaseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304DE071DE45F420003A7FC /* DatabaseOperations.swift */; };
 		133618A41DE37531003277CB /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133618A31DE37531003277CB /* Globals.swift */; };
+		136574FC1DF39B76004907AD /* CodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136574FA1DF39B76004907AD /* CodeScannerViewController.swift */; };
+		136574FD1DF39B76004907AD /* CodeScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136574FB1DF39B76004907AD /* CodeScannerViewController.xib */; };
 		1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1C71DD91BC200A212E9 /* AppDelegate.swift */; };
 		1369B1CA1DD91BC200A212E9 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1C91DD91BC200A212E9 /* EventsViewController.swift */; };
 		1369B1CC1DD91BC200A212E9 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		1304DE071DE45F420003A7FC /* DatabaseOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseOperations.swift; sourceTree = "<group>"; };
 		133618A31DE37531003277CB /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		136574FA1DF39B76004907AD /* CodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeScannerViewController.swift; sourceTree = "<group>"; };
+		136574FB1DF39B76004907AD /* CodeScannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeScannerViewController.xib; sourceTree = "<group>"; };
 		1369B1C41DD91BC100A212E9 /* Turnstyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turnstyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1369B1C71DD91BC200A212E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1369B1C91DD91BC200A212E9 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				133618A31DE37531003277CB /* Globals.swift */,
 				1304DE071DE45F420003A7FC /* DatabaseOperations.swift */,
 				7C7236011DEDE73C007D0D17 /* BebasNeue.otf */,
+				136574FA1DF39B76004907AD /* CodeScannerViewController.swift */,
+				136574FB1DF39B76004907AD /* CodeScannerViewController.xib */,
 			);
 			path = Turnstyle;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 				1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */,
 				7CEA39141DDCD87D00599F5A /* EventForm.xib in Resources */,
 				7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */,
+				136574FD1DF39B76004907AD /* CodeScannerViewController.xib in Resources */,
 				1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */,
 				7C7236021DEDE73C007D0D17 /* BebasNeue.otf in Resources */,
 				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,
@@ -262,6 +269,7 @@
 				1369B1DC1DD91CA000A212E9 /* Event.swift in Sources */,
 				7CE1E0531DEE384F007C6508 /* EventViewCell.swift in Sources */,
 				1369B1CC1DD91BC200A212E9 /* TicketsViewController.swift in Sources */,
+				136574FC1DF39B76004907AD /* CodeScannerViewController.swift in Sources */,
 				1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */,
 				1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */,
 				1304DE081DE45F420003A7FC /* DatabaseOperations.swift in Sources */,

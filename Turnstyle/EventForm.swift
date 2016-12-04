@@ -42,78 +42,64 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         numTixOut.text =  numTixOut.text?.trimmingCharacters(in: .whitespaces)
         
         //check for user input
-        if ((hostNameOut.text?.isEmpty)! || (eventNameOut.text?.isEmpty)! || (locationOut.text?.isEmpty)! || (priceOut.text?.isEmpty)! || (numTixOut.text?.isEmpty)!){
+        if ((hostNameOut.text?.isEmpty)!
+            || (eventNameOut.text?.isEmpty)!
+            || (locationOut.text?.isEmpty)!
+            || (priceOut.text?.isEmpty)!
+            || (numTixOut.text?.isEmpty)!){
             
-            //code to create a pop up notifying user of invalid input
-            let popUp = UIAlertController(title: "Invalid Form", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.alert)
-            popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
-            self.present(popUp, animated: true, completion: nil)
+            displayPopup("Please fill out all fields")
+        }else{
+            let hostName = hostNameOut.text
+        
+            let eventName = eventNameOut.text
+            let location = locationOut.text
+        
+            let cost = NumberFormatter().number(from: priceOut.text!)?.doubleValue
 
-        }
-        else{
-        let hostName = hostNameOut.text
+            let numTix = NumberFormatter().number(from: numTixOut.text!)?.intValue
+            
+            let date = dateOut.date
+            let description = descriptionOut.text
         
-        let eventName = eventNameOut.text
-        let location = locationOut.text
-        
-        let cost = NumberFormatter().number(from: priceOut.text!)?.doubleValue
-
-        let numTix = NumberFormatter().number(from: numTixOut.text!)?.intValue
-        
-        let date = dateOut.date
-        let description = descriptionOut.text
-        
-        //TODO url generation
+            //TODO url generation
         
             //check if cost field is a number
             if (cost == nil || cost! < 0.0){
+                
                 priceOut.text = ""
+                displayPopup("Please enter a valid price")
+            }else if (numTix == nil || numTix! < 0){ //check if ticket field is a number
                 
-                //same pop up code
-                let popUp = UIAlertController(title: "Invalid Form", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.alert)
-                popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
-                self.present(popUp, animated: true, completion: nil)
-            }
-            
-            //check if ticket field is a number
-            else if (numTix == nil || numTix! < 0){
                 numTixOut.text = ""
-                
-                //same pop up code
-                let popUp = UIAlertController(title: "Invalid Form", message: "Please enter a valid number of tickets", preferredStyle: UIAlertControllerStyle.alert)
-                popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
-                self.present(popUp, animated: true, completion: nil)
-            }
-                
-            else{
+                displayPopup("Please enter a valid number of tickets")
+
+            }else{
                 var newEvent = Event(cost: cost!,
-                             ticketsLeft: numTix!,
-                             host: hostName!,
-                             name: eventName!,
-                             location: location!,
-                             eventDate: date,
-                             description: description!,
-                             url: "turnstyle.com"
-                            )
-        
+                                     ticketsLeft: numTix!,
+                                     host: hostName!,
+                                     name: eventName!,
+                                     location: location!,
+                                     eventDate: date,
+                                     description: description!,
+                                     url: "turnstyle.com")
+            
                 let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
-                
+                    
                 let newEventEntry = EVENTS_REF?.childByAutoId()
-        
+            
                 newEvent.setId(id: newEventEntry!.key)
-        
+            
                 newEventEntry?.setValue(newEvent.toAnyObject())
-                
-                
+                    
+                    
                 //upload pictures to Firebase Storage
                 let eventPictureRef = storageRef.child("eventpictures/" + (newEventEntry?.key)!)
                 eventPictureRef.put(imageData, metadata: nil)
-                
-                
-        }
-                //return to previous view
-                navigationController?.popViewController(animated: true)
             }
+            //return to previous view
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     //Code for pulling up image picker and selecting image
@@ -136,7 +122,6 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         dismiss(animated: true, completion: nil)
     }
     
-    
     //Additional styling to form
     func styleForm(){
         hostNameOut.font = UIFont(name:"BebasNeue", size:15.0)
@@ -150,7 +135,11 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         imageUploadOut.titleLabel?.font = UIFont(name:"BebasNeue", size:18.0)
     }
     
-    
+    private func displayPopup(withMessage: String){
+        let popUp = UIAlertController(title: "Invalid Form", message: withMessage, preferredStyle: UIAlertControllerStyle.alert)
+        popUp.addAction(UIAlertAction(title: "Okay I'm dumb", style: UIAlertActionStyle.default, handler: nil))
+        self.present(popUp, animated: true, completion: nil)
+    }
     
     //Create Placeholder text for Description Text View
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -166,7 +155,6 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
             textView.textColor = UIColor.lightGray
         }
     }
-    //
     
     
     override func viewDidLoad() {
@@ -188,16 +176,4 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

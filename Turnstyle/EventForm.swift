@@ -58,6 +58,7 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
             let location = locationOut.text
         
             let cost = NumberFormatter().number(from: priceOut.text!)?.doubleValue
+         
 
             let numTix = NumberFormatter().number(from: numTixOut.text!)?.intValue
             
@@ -77,6 +78,7 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
                 displayPopup(withMessage: "Please enter a valid number of tickets")
 
             }else{
+                
                 var newEvent = Event(cost: cost!,
                                      ticketsLeft: numTix!,
                                      host: hostName!,

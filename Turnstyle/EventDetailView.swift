@@ -35,10 +35,10 @@ class EventDetailView: UIViewController {
         style()
         loadImage()
         super.viewDidLoad()
-        
+        let cost_string = String(format:"%.2f",event!.ticketCost)
         name.text = event!.name
         host.text = "Host: \(event!.host)"
-        price.text = "Price: \(event!.ticketCost.description)"
+        price.text = "Price: $\(cost_string)"
         location.text = "Location: \(event!.location)"
         detailDescription.text = "Description: \(event!.description)"
         

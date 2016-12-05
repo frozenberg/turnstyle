@@ -8,13 +8,21 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
+import FirebaseStorageUI
 
 struct Globals{
+    
+    
     static var FIREBASE_REF : FIRDatabaseReference? = nil
+    static var STORAGE_REF: FIRStorageReference? = nil
     static var USERID : String = ""
+    static let FONT : String = "BebasNeue"
+    static let ORANGE: UIColor = UIColor(colorLiteralRed: 1, green: 0.498, blue: 0, alpha: 0.6)
     
     static func initialize(){
         FIREBASE_REF = FIRDatabase.database().reference()
+        STORAGE_REF = FIRStorage.storage().reference()
         USERID = UIDevice.current.identifierForVendor!.uuidString
     }
     

@@ -40,12 +40,11 @@ struct Event{
         self.url = url
         self.createdDate = Date()
         self.hostId = Globals.USERID
-        self.attendeeList = []
+        self.attendeeList = [Globals.USERID]
     }
     
     //constructor for Events from FIRDataSnapshot (reconstruct Firebase data into Event struct)
     init(snapshot: FIRDataSnapshot){
-        //TODO: FIX ALL DATES FOR THE LOVE OF GOD
         self.eventId = snapshot.key
         let snapshotValue = snapshot.value as! [String: AnyObject]
         
@@ -56,17 +55,21 @@ struct Event{
         self.location = snapshotValue["location"] as! String
         
         self.description = snapshotValue["description"] as! String
-        
-        //FIX FIX FIX
-        //        self.eventDate = snapshotValue["eventDate"] as! Date
-        self.eventDate = Date()
         self.url = snapshotValue["url"] as! String
-        //        self.createdDate = snapshotValue["createdDate"] as! Date
-        self.createdDate = Date()
-        //        self.eventTime = snapshotValue["eventTime"] as! Date
-        //FIX FIX FIX
         
-        self.hostId = snapshotValue["hostID"] as! String
+        
+        let DATE_FORMATTER = DateFormatter()
+        DATE_FORMATTER.dateStyle = DateFormatter.Style.short
+        DATE_FORMATTER.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+        
+        let eventDateString = snapshotValue["eventDate"] as! String
+        self.eventDate = DATE_FORMATTER.date(from: eventDateString)!
+        
+
+        let createdDateString = snapshotValue["createdDate"] as! String
+        self.createdDate = DATE_FORMATTER.date(from: createdDateString)!
+        
+        self.hostId = snapshotValue["hostId"] as! String
         self.attendeeList = snapshotValue["attendeeList"] as! [String]
     }
     

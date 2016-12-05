@@ -27,7 +27,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnN-3M-vuU">
-                        <rect key="frame" x="0.0" y="94.5" width="320" height="45"/>
+                        <rect key="frame" x="0.0" y="94" width="320" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hosting" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsB-iU-471">
                                 <rect key="frame" x="201" y="12" width="104" height="21"/>
@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" constant="104" id="yd7-vc-b0K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJ2-2V-HJz">
@@ -64,14 +64,26 @@
                             <constraint firstItem="PsB-iU-471" firstAttribute="centerX" secondItem="WJ2-2V-HJz" secondAttribute="centerX" id="zzd-je-Enk"/>
                         </constraints>
                     </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XHy-MX-PwR">
+                        <rect key="frame" x="142" y="51" width="37" height="37"/>
+                    </stackView>
+                    <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FZD-de-fKm">
+                        <rect key="frame" x="142" y="47" width="37" height="37"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="XHy-MX-PwR" firstAttribute="centerX" secondItem="MnN-3M-vuU" secondAttribute="centerX" id="1rs-4P-FV9"/>
+                    <constraint firstItem="MnN-3M-vuU" firstAttribute="top" secondItem="XHy-MX-PwR" secondAttribute="bottom" constant="6" id="5Da-gb-7dN"/>
+                    <constraint firstItem="XHy-MX-PwR" firstAttribute="trailing" secondItem="FZD-de-fKm" secondAttribute="trailing" id="F7a-TU-AEg"/>
                     <constraint firstAttribute="trailing" secondItem="MnN-3M-vuU" secondAttribute="trailing" id="JhK-ph-PWn"/>
                     <constraint firstItem="MnN-3M-vuU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KLX-b5-nxq"/>
+                    <constraint firstItem="XHy-MX-PwR" firstAttribute="centerY" secondItem="Gmg-qw-82X" secondAttribute="centerY" id="LVp-kY-Rug"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-9" id="Tsb-st-N3Z"/>
                     <constraint firstItem="Gmg-qw-82X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VWI-yg-XkQ"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bR9-ff-RYW"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="centerY" secondItem="Gmg-qw-82X" secondAttribute="centerY" constant="-23" id="e6H-E3-nGx"/>
+                    <constraint firstItem="XHy-MX-PwR" firstAttribute="leading" secondItem="FZD-de-fKm" secondAttribute="leading" id="jAa-PE-Kb9"/>
+                    <constraint firstItem="MnN-3M-vuU" firstAttribute="top" secondItem="FZD-de-fKm" secondAttribute="bottom" constant="10" id="kuG-yw-5L0"/>
                     <constraint firstItem="Gmg-qw-82X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="p7p-oU-5Id"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="centerX" secondItem="MnN-3M-vuU" secondAttribute="centerX" id="qC6-Fb-iiz"/>
                     <constraint firstAttribute="bottom" secondItem="MnN-3M-vuU" secondAttribute="bottom" id="s7h-Tr-A5V"/>
@@ -85,10 +97,11 @@
                 <outlet property="eventNameOut" destination="WJ2-2V-HJz" id="DKc-oi-Pgs"/>
                 <outlet property="hostingFlagOut" destination="PsB-iU-471" id="uMa-6g-FNV"/>
                 <outlet property="lineView" destination="hWM-ak-ULy" id="8XC-yJ-KQ3"/>
+                <outlet property="loadingCircle" destination="FZD-de-fKm" id="OhN-bI-HTG"/>
                 <outlet property="overLayView" destination="MnN-3M-vuU" id="qil-Tb-JKo"/>
                 <outlet property="transparentBox" destination="G6a-vr-dgr" id="UyG-NF-6J3"/>
             </connections>
-            <point key="canvasLocation" x="34" y="103.5"/>
+            <point key="canvasLocation" x="34" y="103"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -19,12 +19,17 @@ class EventViewCell: UITableViewCell {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var transparentBox: UIView!
     
+    @IBOutlet weak var loadingCircle: UIActivityIndicatorView!
+    
+    @IBOutlet weak var settingUp: UILabel!
+    
+    var eventID:String!
     
     override func awakeFromNib() {
         
         
-        eventNameOut.font = UIFont(name:"BebasNeue", size:18.0)
-        hostingFlagOut.font = UIFont(name:"BebasNeue", size:18.0)
+        eventNameOut.font = UIFont(name:Globals.FONT, size:18.0)
+        hostingFlagOut.font = UIFont(name:Globals.FONT, size:18.0)
         super.awakeFromNib()
         // Initialization code
     }

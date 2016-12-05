@@ -25,8 +25,10 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     // code for uploading images
     var imageData = Data()
     var photoURL = NSURL()
+    var parentView: EventsViewController?
+    var pickImage = false
     let imagePicker = UIImagePickerController()
-    let storageRef = FIRStorage.storage().reference()
+    let storageRef = Globals.STORAGE_REF
     @IBOutlet weak var imageUploadOut: UIButton!
     
     
@@ -48,7 +50,7 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
             || (priceOut.text?.isEmpty)!
             || (numTixOut.text?.isEmpty)!){
             
-            displayPopup("Please fill out all fields")
+            displayPopup(withMessage: "Please fill out all fields")
         }else{
             let hostName = hostNameOut.text
         
@@ -68,11 +70,11 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
             if (cost == nil || cost! < 0.0){
                 
                 priceOut.text = ""
-                displayPopup("Please enter a valid price")
+                displayPopup(withMessage: "Please enter a valid price")
             }else if (numTix == nil || numTix! < 0){ //check if ticket field is a number
                 
                 numTixOut.text = ""
-                displayPopup("Please enter a valid number of tickets")
+                displayPopup(withMessage: "Please enter a valid number of tickets")
 
             }else{
                 var newEvent = Event(cost: cost!,
@@ -91,11 +93,14 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
                 newEvent.setId(id: newEventEntry!.key)
             
                 newEventEntry?.setValue(newEvent.toAnyObject())
-                    
-                    
+                parentView?.loading = newEventEntry?.key
+                
                 //upload pictures to Firebase Storage
-                let eventPictureRef = storageRef.child("eventpictures/" + (newEventEntry?.key)!)
-                eventPictureRef.put(imageData, metadata: nil)
+                if(pickImage == true){
+                    let eventPictureRef = storageRef?.child("eventpictures/" + (newEventEntry?.key)!)
+                    parentView?.uploadTask = eventPictureRef?.put(imageData, metadata: nil)
+                    pickImage = false
+                }
             }
             //return to previous view
             navigationController?.popViewController(animated: true)
@@ -116,7 +121,7 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
+        pickImage = true
         imageOut.image = selectedImage
         imageData = UIImagePNGRepresentation(selectedImage)!
         dismiss(animated: true, completion: nil)
@@ -124,15 +129,15 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     //Additional styling to form
     func styleForm(){
-        hostNameOut.font = UIFont(name:"BebasNeue", size:15.0)
-        eventNameOut.font = UIFont(name:"BebasNeue", size:15.0)
-        locationOut.font = UIFont(name:"BebasNeue", size:15.0)
-        priceOut.font = UIFont(name:"BebasNeue", size:15.0)
-        numTixOut.font = UIFont(name:"BebasNeue", size:15.0)
+        hostNameOut.font = UIFont(name:Globals.FONT, size:15.0)
+        eventNameOut.font = UIFont(name:Globals.FONT, size:15.0)
+        locationOut.font = UIFont(name:Globals.FONT, size:15.0)
+        priceOut.font = UIFont(name:Globals.FONT, size:15.0)
+        numTixOut.font = UIFont(name:Globals.FONT, size:15.0)
         descriptionOut.text = "Description"
         descriptionOut.textColor = UIColor.lightGray
-        descriptionOut.font = UIFont(name:"BebasNeue", size:15.0)
-        imageUploadOut.titleLabel?.font = UIFont(name:"BebasNeue", size:18.0)
+        descriptionOut.font = UIFont(name:Globals.FONT, size:15.0)
+        imageUploadOut.titleLabel?.font = UIFont(name:Globals.FONT, size:18.0)
     }
     
     private func displayPopup(withMessage: String){

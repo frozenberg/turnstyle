@@ -41,7 +41,13 @@ class EventDetailView: UIViewController {
         price.text = "Price: \(event!.ticketCost.description)"
         location.text = "Location: \(event!.location)"
         detailDescription.text = "Description: \(event!.description)"
-        date.text = "Date: \(event!.eventDate.description)"
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.long
+        formatter.timeStyle = .short
+        let newEventDate = formatter.string(from: event!.eventDate)
+        date.text = "Date: \(newEventDate)"
+        
         url.text = "URL: \(event!.url)"
         
         // Do any additional setup after loading the view.
@@ -52,13 +58,13 @@ class EventDetailView: UIViewController {
     }
     
     func style(){
-        name.font = UIFont(name:"BebasNeue", size:18.0)
-        host.font = UIFont(name:"BebasNeue", size:18.0)
-        price.font = UIFont(name:"BebasNeue", size:18.0)
-        location.font = UIFont(name:"BebasNeue", size:18.0)
-        date.font = UIFont(name:"BebasNeue", size:18.0)
-        url.font = UIFont(name:"BebasNeue", size:18.0)
-        detailDescription.font = UIFont(name:"BebasNeue", size:18.0)
+        name.font = UIFont(name:Globals.FONT, size:18.0)
+        host.font = UIFont(name:Globals.FONT, size:18.0)
+        price.font = UIFont(name:Globals.FONT, size:18.0)
+        location.font = UIFont(name:Globals.FONT, size:18.0)
+        date.font = UIFont(name:Globals.FONT, size:18.0)
+        url.font = UIFont(name:Globals.FONT, size:18.0)
+        detailDescription.font = UIFont(name:Globals.FONT, size:18.0)
     }
     
     func loadImage(){

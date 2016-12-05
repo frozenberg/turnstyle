@@ -16,9 +16,12 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     @IBOutlet var tableViewOut: UITableView!
     
-    var eventArray : [Event] = []
-    let FIREBASE_REF = FIRDatabase.database().reference()
-    let storageRef = FIRStorage.storage().reference()
+    var eventArray : [(event: Event, attending: Bool)] = []
+    var loading: String? = nil
+    var uploadTask: FIRStorageUploadTask? = nil
+    
+    let FIREBASE_REF = Globals.FIREBASE_REF
+    let STORAGE_REF = Globals.STORAGE_REF
     
     func position(for bar: UIBarPositioning) -> UIBarPosition{
         return .topAttached;
@@ -27,6 +30,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     @IBAction func addEvent(_ sender: Any) {
         let eventFormViewController = EventForm(nibName: "EventForm", bundle: nil)
+        eventFormViewController.parentView = self
         self.navigationController?.pushViewController(eventFormViewController, animated: true)
     }
     
@@ -42,12 +46,32 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         let myCell = tableViewOut.dequeueReusableCell(withIdentifier: "EventViewCell") as! EventViewCell
+        myCell.eventID = eventArray[indexPath.row].event.eventId
+        myCell.eventNameOut.text = eventArray[indexPath.row].event.getName()
+        myCell.hostingFlagOut.text = "Hosting"
+        myCell.hostingFlagOut.textColor = Globals.ORANGE
+        if(eventArray[indexPath.row].attending == true){
+            print("in herer \(indexPath.row)")
+            myCell.hostingFlagOut.text = "Attending"
+            myCell.hostingFlagOut.textColor = UIColor.lightGray
+        }
         
-        myCell.eventNameOut.text = eventArray[indexPath.row].getName()
+        let imageID:String = (eventArray[indexPath.row].event.eventId)
+        let reference: FIRStorageReference = STORAGE_REF!.child("eventpictures/\(imageID)")
         
-        let imageID:String = (eventArray[indexPath.row].eventId)
-        let reference: FIRStorageReference = storageRef.child("eventpictures/\(imageID)")
-        myCell.cellImage.sd_setImage(with: reference, placeholderImage: UIImage(imageLiteralResourceName: "635878692300261322-1064813558_28176-1"))
+        if (myCell.eventID == loading){
+            let observer = uploadTask?.observe(.progress){snapshot in
+                myCell.loadingCircle.isHidden = false
+                myCell.loadingCircle.startAnimating()
+            }
+            let success = uploadTask?.observe(.success){snapshot in
+                print("success")
+                myCell.cellImage.sd_setImage(with: reference , placeholderImage: UIImage(imageLiteralResourceName: "635878692300261322-1064813558_28176-1"))
+                myCell.loadingCircle.isHidden = true
+            }
+        }
+        
+        myCell.cellImage.sd_setImage(with: reference , placeholderImage: UIImage(imageLiteralResourceName: "635878692300261322-1064813558_28176-1"))
         
         
         return myCell
@@ -56,12 +80,13 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
-        eventDetailVC.event = eventArray[indexPath.row]
+        eventDetailVC.event = eventArray[indexPath.row].event
         self.navigationController?.pushViewController(eventDetailVC, animated: true)
     }
     
+    
     override func viewDidLoad() {
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name:"BebasNeue", size:18.0)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name:Globals.FONT, size:18.0)!]
         tableViewOut.register(UINib(nibName: "EventViewCell", bundle: nil), forCellReuseIdentifier: "EventViewCell")
         
         super.viewDidLoad()
@@ -70,7 +95,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tableViewOut.delegate = self
         
         
-        DatabaseOperations.getEvents(populateArray:{(newEvents: [Event]) in
+        DatabaseOperations.getEvents(populateArray:{(newEvents: [(Event, Bool)]) in
             self.eventArray = newEvents
             self.tableViewOut.reloadData()
         })

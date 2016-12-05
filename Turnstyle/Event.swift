@@ -63,6 +63,8 @@ struct Event{
         DATE_FORMATTER.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
         
         let eventDateString = snapshotValue["eventDate"] as! String
+
+        
         self.eventDate = DATE_FORMATTER.date(from: eventDateString)!
         
 

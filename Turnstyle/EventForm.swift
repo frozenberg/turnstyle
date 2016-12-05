@@ -86,7 +86,7 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
                                      location: location!,
                                      eventDate: date,
                                      description: description!,
-                                     url: "mikeclimbs.rocks/tickets/")
+                                     url: "mikeclimbs.rocks/tickets?")
             
                 let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
                     

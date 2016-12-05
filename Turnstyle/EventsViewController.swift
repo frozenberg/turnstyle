@@ -81,14 +81,14 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
         eventDetailVC.event = eventArray[indexPath.row].event
-        self.navigationController?.pushViewController(eventDetailVC, animated: true)
+		self.navigationController?.pushViewController(eventDetailVC, animated: true)
     }
     
     
     override func viewDidLoad() {
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name:Globals.FONT, size:18.0)!]
         tableViewOut.register(UINib(nibName: "EventViewCell", bundle: nil), forCellReuseIdentifier: "EventViewCell")
-        
+		
         super.viewDidLoad()
         tableViewOut.reloadData()
         tableViewOut.dataSource = self
@@ -99,11 +99,24 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
             self.eventArray = newEvents
             self.tableViewOut.reloadData()
         })
-        
-        // Do any additional setup after loading the view, typically from a nib.
+		
     }
+	
+	func checkIfComingFromURL(){
+		if(Globals.TICKET_FROM_URL != ""){
+			DatabaseOperations.getEvent(withId: Globals.TICKET_FROM_URL, populateArray:{(newEvents: [Event]) in
+				let requestedEventArray = newEvents
+				let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
+				eventDetailVC.event = requestedEventArray[0]
+				self.navigationController?.pushViewController(eventDetailVC, animated: true)
+			})
+			Globals.TICKET_FROM_URL = ""
+		}
+	}
     
     override func viewWillAppear(_ animated: Bool) {
+		NotificationCenter.default.addObserver(self, selector: #selector(checkIfComingFromURL), name: .UIApplicationWillEnterForeground, object: nil)
+		checkIfComingFromURL()
         if let row = tableViewOut.indexPathForSelectedRow {
             self.tableViewOut.deselectRow(at: row, animated: false)
         }

@@ -19,6 +19,7 @@ struct Globals{
     static var USERID : String = ""
     static let FONT : String = "BebasNeue"
     static let ORANGE: UIColor = UIColor(colorLiteralRed: 1, green: 0.498, blue: 0, alpha: 0.6)
+	static var TICKET_FROM_URL = ""
     
     static func initialize(){
         FIREBASE_REF = FIRDatabase.database().reference()

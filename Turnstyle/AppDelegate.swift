@@ -31,14 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			return true;
 		}
 		let queryArray = url.absoluteString.components(separatedBy: "/")
-		//["turnstyle","","eventID","ticketId"
-		
-		if(queryArray[2] == "eventID" && queryArray.count != 4){
-			print(queryArray[3])
-			
+		print(queryArray)
+		if(queryArray[2] == "eventId" && queryArray.count == 4){
+			Globals.TICKET_FROM_URL = queryArray[3]
 			return true;
 		}
-		
 		print("Invalid URL")
 		return false
 	}
@@ -55,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+//		print("applicationWillEnterForeground "+Globals.TICKET_FROM_URL)
+//		EventsViewController().checkIfComingFromURL()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

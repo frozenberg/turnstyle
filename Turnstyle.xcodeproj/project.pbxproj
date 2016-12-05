@@ -172,7 +172,7 @@
 				TargetAttributes = {
 					1369B1C31DD91BC100A212E9 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = AC3SQBGRF2;
+						DevelopmentTeam = SEZ5F74454;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -401,10 +401,10 @@
 			baseConfigurationReference = 84E56FCB453B4566FC914292 /* Pods-Turnstyle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AC3SQBGRF2;
+				DEVELOPMENT_TEAM = SEZ5F74454;
 				INFOPLIST_FILE = Turnstyle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = style.turn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.style.turn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -415,10 +415,10 @@
 			baseConfigurationReference = 3CB80A77E508C0FCE5FC9B3A /* Pods-Turnstyle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AC3SQBGRF2;
+				DEVELOPMENT_TEAM = SEZ5F74454;
 				INFOPLIST_FILE = Turnstyle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = style.turn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.style.turn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

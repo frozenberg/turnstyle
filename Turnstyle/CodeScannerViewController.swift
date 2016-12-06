@@ -19,11 +19,15 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     
     var event: Event? = nil //this event is set by the EventDetailView that pushes the ScannerView
     
+    @IBOutlet weak var messageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
+        
+        messageLabel.isHidden = true
         
         let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         let videoInput: AVCaptureDeviceInput
@@ -90,10 +94,41 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     
     func found(code: String) {
         let codeArray = code.components(separatedBy: "/")
+        let attendees = event?.attendeeList
+        var isValid = false
         if (codeArray[EVENT_ID_INDEX] == event?.eventId){
             print("Event id: \(codeArray[EVENT_ID_INDEX])")
+            for id: String in attendees! {
+                if (id == codeArray[USER_ID_INDEX]){
+                    isValid = true
+                }
+            }
         }
-        print(code)
+        if (isValid){
+            foundValidTicket()
+        }else{
+            foundInvalidTicket()
+        }
+    }
+    
+    func foundValidTicket(){
+        messageLabel.text = "Ticket Redeemed!"
+        messageLabel.isHidden = false
+        //TODO add some form of db interaction to mark the ticket as redeemed
+        
+        //no clue if this works, should restart capture session
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.captureSession.startRunning()
+        })
+       
+        
+    }
+    
+    func foundInvalidTicket(){
+        messageLabel.text = "Invalid Ticket"
+        messageLabel.backgroundColor = UIColor.red
+        messageLabel.isHidden = false
+        //TODO restart the scanning functionality (i think)
     }
     
     override var prefersStatusBarHidden: Bool {

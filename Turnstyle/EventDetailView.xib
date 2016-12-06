@@ -50,23 +50,13 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFK-oU-kzX">
-                                    <rect key="frame" x="170" y="547" width="35" height="30"/>
-                                    <state key="normal" title="Scan">
-                                        <color key="titleColor" red="1" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="PurchaseTicket:" destination="-1" eventType="touchUpInside" id="laA-vw-HqO"/>
-                                        <action selector="scanButtonPressed:" destination="-1" eventType="touchUpInside" id="Rr4-g7-vRi"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZc-DB-ZUc">
                                     <rect key="frame" x="-14" y="217" width="428" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-ns-Slf">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-ns-Slf">
                                     <rect key="frame" x="8" y="518" width="37" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -101,6 +91,14 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0z-0S-kNP">
+                                    <rect key="frame" x="167" y="547" width="41" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="SCAN"/>
+                                    <connections>
+                                        <action selector="scannerButtonPressed:" destination="-1" eventType="touchUpInside" id="gfU-Xu-kS4"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -108,7 +106,6 @@
                                 <constraint firstItem="vWd-YL-lMY" firstAttribute="leading" secondItem="0Wz-l0-oDp" secondAttribute="leading" id="0VB-Qj-K6u"/>
                                 <constraint firstItem="QZc-DB-ZUc" firstAttribute="top" secondItem="vWd-YL-lMY" secondAttribute="bottom" constant="8" symbolic="YES" id="91w-2A-LZQ"/>
                                 <constraint firstAttribute="trailing" secondItem="QZc-DB-ZUc" secondAttribute="trailing" constant="-39" id="A4O-9R-GJJ"/>
-                                <constraint firstAttribute="bottom" secondItem="QFK-oU-kzX" secondAttribute="bottom" constant="157" id="FPU-Tb-jfT"/>
                                 <constraint firstItem="eca-z4-M7Q" firstAttribute="top" secondItem="QZc-DB-ZUc" secondAttribute="bottom" constant="48" id="IWW-gJ-KtC"/>
                                 <constraint firstItem="vWd-YL-lMY" firstAttribute="top" secondItem="0Wz-l0-oDp" secondAttribute="top" id="JLM-ar-N9f"/>
                                 <constraint firstItem="eca-z4-M7Q" firstAttribute="top" secondItem="0Wz-l0-oDp" secondAttribute="top" constant="286" id="N8O-ae-6ff"/>
@@ -119,7 +116,6 @@
                                 <constraint firstItem="MkX-CY-KQp" firstAttribute="trailing" secondItem="kPG-2U-NzV" secondAttribute="trailing" id="bys-Gd-GTX"/>
                                 <constraint firstItem="MkX-CY-KQp" firstAttribute="top" secondItem="0Wz-l0-oDp" secondAttribute="top" constant="373" id="dSr-oI-QdY"/>
                                 <constraint firstItem="eca-z4-M7Q" firstAttribute="leading" secondItem="1Kn-ns-Slf" secondAttribute="leading" id="diI-hD-z4g"/>
-                                <constraint firstItem="QFK-oU-kzX" firstAttribute="top" secondItem="1Kn-ns-Slf" secondAttribute="bottom" constant="8" symbolic="YES" id="gOn-Qx-0q9"/>
                                 <constraint firstItem="MkX-CY-KQp" firstAttribute="trailing" secondItem="txa-Z7-tEn" secondAttribute="trailing" id="gP1-CP-D4j"/>
                                 <constraint firstItem="txa-Z7-tEn" firstAttribute="top" secondItem="MkX-CY-KQp" secondAttribute="bottom" constant="8" symbolic="YES" id="iVb-rg-QAp"/>
                                 <constraint firstItem="eca-z4-M7Q" firstAttribute="leading" secondItem="txa-Z7-tEn" secondAttribute="leading" id="jFv-62-eDZ"/>
@@ -128,7 +124,6 @@
                                 <constraint firstItem="ZIW-vH-xeV" firstAttribute="top" secondItem="eca-z4-M7Q" secondAttribute="bottom" constant="8" symbolic="YES" id="oip-Nv-BvU"/>
                                 <constraint firstAttribute="trailing" secondItem="eca-z4-M7Q" secondAttribute="trailing" constant="44" id="reT-PC-COE"/>
                                 <constraint firstItem="eca-z4-M7Q" firstAttribute="leading" secondItem="kPG-2U-NzV" secondAttribute="leading" id="ryv-ol-ru1"/>
-                                <constraint firstItem="vWd-YL-lMY" firstAttribute="centerX" secondItem="QFK-oU-kzX" secondAttribute="centerX" id="yjb-yJ-c6m"/>
                             </constraints>
                         </view>
                     </subviews>

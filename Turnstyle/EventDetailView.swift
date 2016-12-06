@@ -29,7 +29,7 @@ class EventDetailView: UIViewController {
     
     let storageRef = FIRStorage.storage().reference()
 
-    @IBAction func scanButtonPressed(_ sender: Any) {
+    @IBAction func scannerButtonPressed(_ sender: Any) {
         let scannerView = CodeScannerViewController(nibName: "CodeScannerViewController", bundle: nil)
         scannerView.event = event
         self.navigationController?.pushViewController(scannerView, animated: true)

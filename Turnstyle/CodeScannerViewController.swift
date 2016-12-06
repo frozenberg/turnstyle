@@ -2,7 +2,7 @@
 //  CodeScannerViewController.swift
 //  Turnstyle
 //
-//  Created by Fede Rozenberg on 12/3/16.
+//  Created by Mike Heavner on 12/3/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 
@@ -114,21 +114,26 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     func foundValidTicket(){
         messageLabel.text = "Ticket Redeemed!"
         messageLabel.isHidden = false
+        self.view.bringSubview(toFront: messageLabel)
         //TODO add some form of db interaction to mark the ticket as redeemed
         
         //no clue if this works, should restart capture session
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.captureSession.startRunning()
+            self.messageLabel.isHidden = true
         })
-       
-        
     }
     
     func foundInvalidTicket(){
         messageLabel.text = "Invalid Ticket"
         messageLabel.backgroundColor = UIColor.red
         messageLabel.isHidden = false
-        //TODO restart the scanning functionality (i think)
+        self.view.bringSubview(toFront: messageLabel)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.captureSession.startRunning()
+            self.messageLabel.isHidden = true
+        })
     }
     
     override var prefersStatusBarHidden: Bool {

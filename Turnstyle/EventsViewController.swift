@@ -108,18 +108,6 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
             self.tableViewOut.reloadData()
         })
     }
-	
-	func checkIfComingFromURL(){
-		if(Globals.TICKET_FROM_URL != ""){
-			DatabaseOperations.getEvent(withId: Globals.TICKET_FROM_URL, populateArray:{(newEvents: [Event]) in
-				let requestedEventArray = newEvents
-				let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
-				eventDetailVC.event = requestedEventArray[0]
-				self.navigationController?.pushViewController(eventDetailVC, animated: true)
-			})
-			Globals.TICKET_FROM_URL = ""
-		}
-	}
     
     override func viewWillAppear(_ animated: Bool) {
         if let row = tableViewOut.indexPathForSelectedRow {

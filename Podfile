@@ -11,5 +11,6 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'FirebaseUI/Storage', '~> 0.6'
 pod 'Stripe'
+pod 'CardIO'
 
 end

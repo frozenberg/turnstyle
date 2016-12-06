@@ -1,4 +1,5 @@
 PODS:
+  - CardIO (5.4.1)
   - Firebase/Core (3.8.0):
     - FirebaseAnalytics (= 3.5.1)
     - FirebaseCore (= 3.4.4)
@@ -39,6 +40,7 @@ PODS:
   - Stripe (9.0.0)
 
 DEPENDENCIES:
+  - CardIO
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
@@ -46,6 +48,7 @@ DEPENDENCIES:
   - Stripe
 
 SPEC CHECKSUMS:
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Firebase: fdbecadb7b5cbef2774852d4fa659b9daf11f2af
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
   FirebaseCore: d0ed25f27b6f9158eccc439f1be6f92e81207e28
@@ -60,6 +63,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Stripe: 935c6deb5e96cbd29d247074bf3aa98a8438e22c
 
-PODFILE CHECKSUM: 1c131da5a51ce1b9d3026c182d7bb7bdafdd3491
+PODFILE CHECKSUM: a784674c806d29fa3b0271b8c02b52054ab26d7b
 
 COCOAPODS: 1.1.1

@@ -50,6 +50,7 @@
 		1369B1DD1DD91DC200A212E9 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		1C464C921DF6931C0068C9AA /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		1C464C931DF6931C0068C9AA /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
+		1CB7ABA11DF7340300A29C60 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		3CB80A77E508C0FCE5FC9B3A /* Pods-Turnstyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.release.xcconfig"; sourceTree = "<group>"; };
 		42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turnstyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 				136574FB1DF39B76004907AD /* CodeScannerViewController.xib */,
 				1C464C921DF6931C0068C9AA /* PaymentViewController.swift */,
 				1C464C931DF6931C0068C9AA /* PaymentViewController.xib */,
+				1CB7ABA11DF7340300A29C60 /* Bridging-Header.h */,
 			);
 			path = Turnstyle;
 			sourceTree = "<group>";
@@ -418,6 +420,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.style.turn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Turnstyle/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -432,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.style.turn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Turnstyle/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

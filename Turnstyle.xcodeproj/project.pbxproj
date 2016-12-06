@@ -19,6 +19,8 @@
 		1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */; };
 		1369B1DC1DD91CA000A212E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DB1DD91CA000A212E9 /* Event.swift */; };
 		1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DD1DD91DC200A212E9 /* Ticket.swift */; };
+		1C464C941DF6931C0068C9AA /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C464C921DF6931C0068C9AA /* PaymentViewController.swift */; };
+		1C464C951DF6931C0068C9AA /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C464C931DF6931C0068C9AA /* PaymentViewController.xib */; };
 		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
 		7C1FC9561DE251CB007DEFA0 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */; };
 		7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */; };
@@ -46,6 +48,8 @@
 		1369B1D51DD91BC200A212E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1369B1DB1DD91CA000A212E9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1369B1DD1DD91DC200A212E9 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		1C464C921DF6931C0068C9AA /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		1C464C931DF6931C0068C9AA /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		3CB80A77E508C0FCE5FC9B3A /* Pods-Turnstyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turnstyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turnstyle/Pods-Turnstyle.release.xcconfig"; sourceTree = "<group>"; };
 		42D2F393F179674A061AD792 /* Pods_Turnstyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turnstyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				7C7236011DEDE73C007D0D17 /* BebasNeue.otf */,
 				136574FA1DF39B76004907AD /* CodeScannerViewController.swift */,
 				136574FB1DF39B76004907AD /* CodeScannerViewController.xib */,
+				1C464C921DF6931C0068C9AA /* PaymentViewController.swift */,
+				1C464C931DF6931C0068C9AA /* PaymentViewController.xib */,
 			);
 			path = Turnstyle;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				7C7236021DEDE73C007D0D17 /* BebasNeue.otf in Resources */,
 				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,
 				1369B1CF1DD91BC200A212E9 /* Main.storyboard in Resources */,
+				1C464C951DF6931C0068C9AA /* PaymentViewController.xib in Resources */,
 				7CE1E0541DEE384F007C6508 /* EventViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +285,7 @@
 				1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */,
 				1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */,
 				1304DE081DE45F420003A7FC /* DatabaseOperations.swift in Sources */,
+				1C464C941DF6931C0068C9AA /* PaymentViewController.swift in Sources */,
 				133618A41DE37531003277CB /* Globals.swift in Sources */,
 				7CEA39131DDCD87D00599F5A /* EventForm.swift in Sources */,
 				1369B1CA1DD91BC200A212E9 /* EventsViewController.swift in Sources */,

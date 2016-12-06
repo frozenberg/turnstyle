@@ -11,6 +11,10 @@ import FirebaseStorage
 import FirebaseStorageUI
 
 class TicketsViewController: UIViewController {
+	
+	var event: Event? = nil //this event is set before the view loads
+	var attendeeList: [String]? = nil
+	let storageRef = FIRStorage.storage().reference()
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var host: UILabel!
@@ -23,29 +27,20 @@ class TicketsViewController: UIViewController {
     @IBOutlet weak var url: UITextView!
     
     @IBOutlet weak var eventImage: UIImageView!
-    
-    @IBOutlet weak var purchaseButton: UIButton!
+	
     @IBOutlet weak var qrImage: UIImageView!
-    
-    
-    @IBAction func purchaseTicket(_ sender: Any) {
-        
-    }
-    
-    
-    
-    
-    var event: Event? = nil //this event is set by the EventsViewController that pushes the DetailView
-    var attendeeList: [String]? = nil
-    let storageRef = FIRStorage.storage().reference()
-    
+	@IBOutlet weak var purchaseBtn: UIButton!
+	
+	@IBAction func purchaseTicket(_ sender: UIButton) {
+		let pvc=PaymentViewController()
+		self.navigationController?.pushViewController(pvc, animated: true)
+	}
     
     override func viewDidLoad() {
-		print(event!.host)
+		super.viewDidLoad()
         attendeeList = (event?.attendeeList)!
         style()
         loadImage()
-        super.viewDidLoad()
         let cost_string = String(format:"%.2f",event!.ticketCost)
         name.text = (event?.name)!
         host.text = "Host: \((event?.host)!)"
@@ -60,8 +55,7 @@ class TicketsViewController: UIViewController {
         date.text = "Date: \(newEventDate)"
         
         url.text = "\((event?.url)!)"
-        
-        // Do any additional setup after loading the view.
+		
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,13 +65,13 @@ class TicketsViewController: UIViewController {
     func style(){
         if(attendeeList?.contains(Globals.USERID))!{
             print("attending")
-            purchaseButton.isHidden = true
+//            purchaseBtn.isHidden = true
             qrImage.isHidden = false
         }
         else{
             print("nah")
             qrImage.isHidden = true
-            purchaseButton.isHidden = false
+//            purchaseBtn.isHidden = false
         }
         urllabel.font = UIFont(name:Globals.FONT, size:18.0)
         name.font = UIFont(name:Globals.FONT, size:18.0)

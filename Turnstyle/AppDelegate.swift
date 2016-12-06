@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 import Firebase
 
 @UIApplicationMain
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+		STPPaymentConfiguration.shared().publishableKey = "pk_test_Bx03EuFF4d0jHKciVwAR7DIN"
         return true
     }
 	
@@ -31,23 +33,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			return true;
 		}
 		let queryArray = url.absoluteString.components(separatedBy: "/")
-//		print(queryArray)
 		if(queryArray[2] == "eventId" && queryArray.count == 4){
-//			Globals.TICKET_FROM_URL = queryArray[3]
 			DatabaseOperations.getEvent(withId: queryArray[3], populateArray:{(newEvents: [Event]) in
 				let requestedEventArray = newEvents
-//				let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
-//				eventDetailVC.event = requestedEventArray[0]
-//				self.navigationController?.pushViewController(eventDetailVC, animated: true)
 				let tv = TicketsViewController(nibName: "TicketViewController", bundle: nil)
+//				let tv=PaymentViewController()
 				tv.event = requestedEventArray[0]
-				UIApplication.shared.delegate?.window??.addSubview(tv.view)
+//				UIApplication.shared.delegate?.window??.addSubview(tv.view)
+				self.window = UIWindow(frame: UIScreen.main.bounds)
+				let nav = UINavigationController()
+				nav.viewControllers = [tv]
+				self.window!.rootViewController = nav
+				self.window?.makeKeyAndVisible()
 			})
-
-			return true;
 		}
-		print("Invalid URL")
-		return false
+		return true
 	}
 
     func applicationWillResignActive(_ application: UIApplication) {

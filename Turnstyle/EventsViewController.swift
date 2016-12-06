@@ -51,7 +51,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         myCell.hostingFlagOut.text = "Hosting"
         myCell.hostingFlagOut.textColor = Globals.ORANGE
         if(eventArray[indexPath.row].attending == true){
-            print("in herer \(indexPath.row)")
+            
             myCell.hostingFlagOut.text = "Attending"
             myCell.hostingFlagOut.textColor = UIColor.lightGray
         }
@@ -79,9 +79,17 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
-        eventDetailVC.event = eventArray[indexPath.row].event
-		self.navigationController?.pushViewController(eventDetailVC, animated: true)
+        
+        if(eventArray[indexPath.row].attending == true){
+            let ticketView = TicketsViewController(nibName: "TicketViewController", bundle: nil)
+            ticketView.event = eventArray[indexPath.row].event
+            self.navigationController?.pushViewController(ticketView, animated: true)
+        }
+        else{
+            let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
+            eventDetailVC.event = eventArray[indexPath.row].event
+            self.navigationController?.pushViewController(eventDetailVC, animated: true)
+        }
     }
     
     

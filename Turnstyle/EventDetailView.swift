@@ -18,8 +18,10 @@ class EventDetailView: UIViewController {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var url: UILabel!
+    @IBOutlet weak var urllabel: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
+    
+    @IBOutlet weak var url: UITextView!
     
     @IBOutlet weak var eventImage: UIImageView!
     
@@ -28,9 +30,6 @@ class EventDetailView: UIViewController {
     let storageRef = FIRStorage.storage().reference()
 
     
-    @IBAction func purchaseTicket(_ sender: Any) {
-    }
-
     override func viewDidLoad() {
         style()
         loadImage()
@@ -48,7 +47,7 @@ class EventDetailView: UIViewController {
         let newEventDate = formatter.string(from: event!.eventDate)
         date.text = "Date: \(newEventDate)"
         
-        url.text = "URL: \(event!.url)"
+        url.text = "\(event!.url)"
         
         // Do any additional setup after loading the view.
     }
@@ -58,6 +57,7 @@ class EventDetailView: UIViewController {
     }
     
     func style(){
+        urllabel.font = UIFont(name:Globals.FONT, size:18.0)
         name.font = UIFont(name:Globals.FONT, size:18.0)
         host.font = UIFont(name:Globals.FONT, size:18.0)
         price.font = UIFont(name:Globals.FONT, size:18.0)

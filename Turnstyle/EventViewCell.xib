@@ -64,25 +64,18 @@
                             <constraint firstItem="PsB-iU-471" firstAttribute="centerX" secondItem="WJ2-2V-HJz" secondAttribute="centerX" id="zzd-je-Enk"/>
                         </constraints>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XHy-MX-PwR">
-                        <rect key="frame" x="142" y="51" width="37" height="37"/>
-                    </stackView>
                     <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FZD-de-fKm">
                         <rect key="frame" x="142" y="47" width="37" height="37"/>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="XHy-MX-PwR" firstAttribute="centerX" secondItem="MnN-3M-vuU" secondAttribute="centerX" id="1rs-4P-FV9"/>
-                    <constraint firstItem="MnN-3M-vuU" firstAttribute="top" secondItem="XHy-MX-PwR" secondAttribute="bottom" constant="6" id="5Da-gb-7dN"/>
-                    <constraint firstItem="XHy-MX-PwR" firstAttribute="trailing" secondItem="FZD-de-fKm" secondAttribute="trailing" id="F7a-TU-AEg"/>
                     <constraint firstAttribute="trailing" secondItem="MnN-3M-vuU" secondAttribute="trailing" id="JhK-ph-PWn"/>
                     <constraint firstItem="MnN-3M-vuU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KLX-b5-nxq"/>
-                    <constraint firstItem="XHy-MX-PwR" firstAttribute="centerY" secondItem="Gmg-qw-82X" secondAttribute="centerY" id="LVp-kY-Rug"/>
+                    <constraint firstItem="FZD-de-fKm" firstAttribute="centerX" secondItem="MnN-3M-vuU" secondAttribute="centerX" id="Rcx-c8-HjM"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-9" id="Tsb-st-N3Z"/>
                     <constraint firstItem="Gmg-qw-82X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VWI-yg-XkQ"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bR9-ff-RYW"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="centerY" secondItem="Gmg-qw-82X" secondAttribute="centerY" constant="-23" id="e6H-E3-nGx"/>
-                    <constraint firstItem="XHy-MX-PwR" firstAttribute="leading" secondItem="FZD-de-fKm" secondAttribute="leading" id="jAa-PE-Kb9"/>
                     <constraint firstItem="MnN-3M-vuU" firstAttribute="top" secondItem="FZD-de-fKm" secondAttribute="bottom" constant="10" id="kuG-yw-5L0"/>
                     <constraint firstItem="Gmg-qw-82X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="p7p-oU-5Id"/>
                     <constraint firstItem="G6a-vr-dgr" firstAttribute="centerX" secondItem="MnN-3M-vuU" secondAttribute="centerX" id="qC6-Fb-iiz"/>

@@ -22,6 +22,7 @@
 		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
 		7C1FC9561DE251CB007DEFA0 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */; };
 		7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */; };
+		7C6A76631DF64C4400D3DF27 /* TicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6A76621DF64C4400D3DF27 /* TicketViewController.xib */; };
 		7C7236021DEDE73C007D0D17 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7236011DEDE73C007D0D17 /* BebasNeue.otf */; };
 		7CE1E0531DEE384F007C6508 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE1E0511DEE384F007C6508 /* EventViewCell.swift */; };
 		7CE1E0541DEE384F007C6508 /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE1E0521DEE384F007C6508 /* EventViewCell.xib */; };
@@ -50,6 +51,7 @@
 		7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailView.xib; sourceTree = "<group>"; };
+		7C6A76621DF64C4400D3DF27 /* TicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketViewController.xib; sourceTree = "<group>"; };
 		7C7236011DEDE73C007D0D17 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		7CE1E0511DEE384F007C6508 /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
 		7CE1E0521DEE384F007C6508 /* EventViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewCell.xib; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				1369B1C91DD91BC200A212E9 /* EventsViewController.swift */,
 				7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */,
 				7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */,
+				7C6A76621DF64C4400D3DF27 /* TicketViewController.xib */,
 				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
 				1369B1CD1DD91BC200A212E9 /* Main.storyboard */,
 				7CEA39111DDCD87D00599F5A /* EventForm.swift */,
@@ -204,6 +207,7 @@
 				7CEA39141DDCD87D00599F5A /* EventForm.xib in Resources */,
 				7C1FC9571DE251CB007DEFA0 /* EventDetailView.xib in Resources */,
 				136574FD1DF39B76004907AD /* CodeScannerViewController.xib in Resources */,
+				7C6A76631DF64C4400D3DF27 /* TicketViewController.xib in Resources */,
 				1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */,
 				7C7236021DEDE73C007D0D17 /* BebasNeue.otf in Resources */,
 				7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */,

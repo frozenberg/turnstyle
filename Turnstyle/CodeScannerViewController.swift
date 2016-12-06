@@ -91,7 +91,7 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     func found(code: String) {
         let codeArray = code.components(separatedBy: "/")
         if (codeArray[EVENT_ID_INDEX] == event?.eventId){
-            print("correct event")
+            print("Event id: \(codeArray[EVENT_ID_INDEX])")
         }
         print(code)
     }

@@ -35,7 +35,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcQ-Tr-oaJ">
-                            <rect key="frame" x="133" y="420" width="110" height="30"/>
+                            <rect key="frame" x="132" y="420" width="110" height="30"/>
                             <state key="normal" title="Purchase Ticket">
                                 <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -108,8 +108,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="635878692300261322-1064813558_28176-1" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-Yg-31b">
-                            <rect key="frame" x="85" y="458" width="204" height="204"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="635878692300261322-1064813558_28176-1" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-Yg-31b">
+                            <rect key="frame" x="120" y="450" width="150" height="150"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="204" id="LBf-Lg-2ni"/>
                             </constraints>

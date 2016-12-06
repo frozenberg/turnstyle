@@ -12,7 +12,7 @@ import Stripe
 class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 
 	@IBOutlet weak var purchaseButton: UIButton!
-	@IBOutlet weak var scanButton: UIButton!
+	@IBOutlet weak var errorLabel: UILabel!
 	
 	var paymentTextField: STPPaymentCardTextField!
 	
@@ -37,10 +37,19 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 			if let token = token {
 				print(token)
 				//TODO Succesful payment made, redirect to somewhere else
+				//Also add user to attendees
 			} else {
-				print(error)
+				self.errorLabel.text = error!.localizedDescription
 			}
 		}
 	}
+	
+	func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
+		if textField.valid{
+			purchaseButton.isEnabled = true
+		}
+	}
+	
+	
 
 }

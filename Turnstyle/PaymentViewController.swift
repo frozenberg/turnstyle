@@ -36,7 +36,7 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 		STPAPIClient.shared().createToken(withCard: card) { token, error in
 			if let token = token {
 				print(token)
-//				self.postStripeToken(token)
+				//TODO Succesful payment made, redirect to somewhere else
 			} else {
 				print(error)
 			}

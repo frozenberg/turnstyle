@@ -37,9 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			DatabaseOperations.getEvent(withId: queryArray[3], populateArray:{(newEvents: [Event]) in
 				let requestedEventArray = newEvents
 				let tv = TicketsViewController(nibName: "TicketViewController", bundle: nil)
-//				let tv=PaymentViewController()
 				tv.event = requestedEventArray[0]
-//				UIApplication.shared.delegate?.window??.addSubview(tv.view)
 				self.window = UIWindow(frame: UIScreen.main.bounds)
 				let nav = UINavigationController()
 				nav.viewControllers = [tv]

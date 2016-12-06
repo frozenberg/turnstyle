@@ -107,7 +107,6 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
             self.eventArray = newEvents
             self.tableViewOut.reloadData()
         })
-		
     }
 	
 	func checkIfComingFromURL(){
@@ -123,8 +122,6 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
 	}
     
     override func viewWillAppear(_ animated: Bool) {
-		NotificationCenter.default.addObserver(self, selector: #selector(checkIfComingFromURL), name: .UIApplicationWillEnterForeground, object: nil)
-		checkIfComingFromURL()
         if let row = tableViewOut.indexPathForSelectedRow {
             self.tableViewOut.deselectRow(at: row, animated: false)
         }

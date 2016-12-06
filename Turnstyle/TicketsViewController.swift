@@ -41,16 +41,17 @@ class TicketsViewController: UIViewController {
     
     
     override func viewDidLoad() {
+		print(event!.host)
         attendeeList = (event?.attendeeList)!
         style()
         loadImage()
         super.viewDidLoad()
         let cost_string = String(format:"%.2f",event!.ticketCost)
-        name.text = event!.name
-        host.text = "Host: \(event!.host)"
+        name.text = (event?.name)!
+        host.text = "Host: \((event?.host)!)"
         price.text = "Price: $\(cost_string)"
-        location.text = "Location: \(event!.location)"
-        detailDescription.text = "Description: \(event!.description)"
+        location.text = "Location: \((event?.location)!)"
+        detailDescription.text = "Description: \((event?.description)!)"
         
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.long
@@ -58,7 +59,7 @@ class TicketsViewController: UIViewController {
         let newEventDate = formatter.string(from: event!.eventDate)
         date.text = "Date: \(newEventDate)"
         
-        url.text = "\(event!.url)"
+        url.text = "\((event?.url)!)"
         
         // Do any additional setup after loading the view.
     }

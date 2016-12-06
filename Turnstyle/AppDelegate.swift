@@ -31,9 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			return true;
 		}
 		let queryArray = url.absoluteString.components(separatedBy: "/")
-		print(queryArray)
+//		print(queryArray)
 		if(queryArray[2] == "eventId" && queryArray.count == 4){
-			Globals.TICKET_FROM_URL = queryArray[3]
+//			Globals.TICKET_FROM_URL = queryArray[3]
+			DatabaseOperations.getEvent(withId: queryArray[3], populateArray:{(newEvents: [Event]) in
+				let requestedEventArray = newEvents
+//				let eventDetailVC = EventDetailView(nibName: "EventDetailView", bundle: nil)
+//				eventDetailVC.event = requestedEventArray[0]
+//				self.navigationController?.pushViewController(eventDetailVC, animated: true)
+				let tv = TicketsViewController(nibName: "TicketViewController", bundle: nil)
+				tv.event = requestedEventArray[0]
+				UIApplication.shared.delegate?.window??.addSubview(tv.view)
+			})
+
 			return true;
 		}
 		print("Invalid URL")
@@ -52,8 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-//		print("applicationWillEnterForeground "+Globals.TICKET_FROM_URL)
-//		EventsViewController().checkIfComingFromURL()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

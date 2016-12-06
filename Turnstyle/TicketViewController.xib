@@ -108,8 +108,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="635878692300261322-1064813558_28176-1" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-Yg-31b">
-                            <rect key="frame" x="85" y="458" width="204" height="204"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="635878692300261322-1064813558_28176-1" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-Yg-31b">
+                            <rect key="frame" x="120" y="450" width="150" height="150"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="204" id="LBf-Lg-2ni"/>
                             </constraints>

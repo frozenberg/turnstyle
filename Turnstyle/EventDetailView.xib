@@ -57,6 +57,7 @@
                                     </state>
                                     <connections>
                                         <action selector="PurchaseTicket:" destination="-1" eventType="touchUpInside" id="laA-vw-HqO"/>
+                                        <action selector="scanButtonPressed:" destination="-1" eventType="touchUpInside" id="Rr4-g7-vRi"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZc-DB-ZUc">

@@ -14,6 +14,11 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
+    let EVENT_ID_INDEX = 0
+    let USER_ID_INDEX = 1
+    
+    var event: Event? = nil //this event is set by the EventDetailView that pushes the ScannerView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,6 +89,10 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     }
     
     func found(code: String) {
+        let codeArray = code.components(separatedBy: "/")
+        if (codeArray[EVENT_ID_INDEX] == event?.eventId){
+            print("Event id: \(codeArray[EVENT_ID_INDEX])")
+        }
         print(code)
     }
     

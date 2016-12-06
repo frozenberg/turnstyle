@@ -30,6 +30,8 @@ class TicketsViewController: UIViewController {
 	
     @IBOutlet weak var qrImage: UIImageView!
 	@IBOutlet weak var purchaseBtn: UIButton!
+    
+    
 	
 	@IBAction func purchaseTicket(_ sender: UIButton) {
 		let pvc=PaymentViewController()
@@ -65,13 +67,18 @@ class TicketsViewController: UIViewController {
     func style(){
         if(attendeeList?.contains(Globals.USERID))!{
             print("attending")
-//            purchaseBtn.isHidden = true
+            purchaseBtn.isHidden = true
+            let eventIDString = event?.eventId
+            let userIDString = Globals.USERID
+            let qrCodeString = "\(eventIDString!)/\(userIDString)"
+            let qrCIImage = Globals.genQR(code: qrCodeString)
+            Globals.scaleAndDisplayQRCodeImage(QR_img: qrCIImage, forView: qrImage)
             qrImage.isHidden = false
         }
         else{
             print("nah")
             qrImage.isHidden = true
-//            purchaseBtn.isHidden = false
+            purchaseBtn.isHidden = false
         }
         urllabel.font = UIFont(name:Globals.FONT, size:18.0)
         name.font = UIFont(name:Globals.FONT, size:18.0)

@@ -1,8 +1,7 @@
 //
-//  eventForm.swift
+//  EventForm.swift
 //  Turnstyle
 //
-//  Created by Ross Arkin on 11/16/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 
@@ -10,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EventForm: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var hostNameOut: UITextField!
     @IBOutlet weak var eventNameOut: UITextField!
@@ -170,17 +169,54 @@ class EventForm: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         //styling
         imagePicker.delegate = self
         styleForm()
+        hostNameOut.delegate = self
+        eventNameOut.delegate = self
+        locationOut.delegate = self
+        priceOut.delegate = self
+        numTixOut.delegate = self
         descriptionOut.delegate = self
+        
         let sendButton = UIBarButtonItem(title: "Creat Event", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(createEvent(_:)))
         
         self.navigationItem.rightBarButtonItem = sendButton
-        //
-        
+        self.addDoneButtonOnNumpad()
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
-
+    
+    func addDoneButtonOnNumpad() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(EventForm.doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.priceOut.inputAccessoryView = doneToolbar
+        self.numTixOut.inputAccessoryView = doneToolbar
+        self.descriptionOut.inputAccessoryView = doneToolbar
+    }
+    
+    
+    //function for done button on numpads
+    @objc private func doneButtonAction() {
+        self.priceOut.resignFirstResponder()
+        self.numTixOut.resignFirstResponder()
+        self.descriptionOut.resignFirstResponder()
+    }
+    
+    //called when 'return' key pressed. return false to ignore.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

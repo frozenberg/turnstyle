@@ -2,7 +2,6 @@
 //  EventDetailView.swift
 //  Turnstyle
 //
-//  Created by Ross Arkin on 11/20/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 
@@ -52,9 +51,8 @@ class EventDetailView: UIViewController {
         let newEventDate = formatter.string(from: event!.eventDate)
         date.text = "Date: \(newEventDate)"
         
-        url.text = "\(event!.url)"
+        url.text = "http://\(event!.url)"
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

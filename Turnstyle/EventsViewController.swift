@@ -60,11 +60,11 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let reference: FIRStorageReference = STORAGE_REF!.child("eventpictures/\(imageID)")
         
         if (myCell.eventID == loading){
-            let observer = uploadTask?.observe(.progress){snapshot in
+            uploadTask?.observe(.progress){snapshot in
                 myCell.loadingCircle.isHidden = false
                 myCell.loadingCircle.startAnimating()
             }
-            let success = uploadTask?.observe(.success){snapshot in
+            uploadTask?.observe(.success){snapshot in
                 print("success")
                 myCell.cellImage.sd_setImage(with: reference , placeholderImage: UIImage(imageLiteralResourceName: "635878692300261322-1064813558_28176-1"))
                 myCell.loadingCircle.isHidden = true

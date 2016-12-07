@@ -2,7 +2,6 @@
 //  PaymentViewController.swift
 //  Turnstyle
 //
-//  Created by Rohan Bhansali on 6/12/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 
@@ -44,7 +43,7 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 	func getStripeToken(card:STPCardParams) {
 		STPAPIClient.shared().createToken(withCard: card) { token, error in
 			if let token = token {
-				print(token)
+//				iprint(token)
 //				self.errorLabel.text = "SUCCESFUL PAYMENT NOICE"
 				self.event?.attendeeList.append(Globals.USERID)
 				self.event?.ticketsLeft -= 1;
@@ -57,7 +56,7 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 	}
 	
 	//validate card number if manually inputted
-	func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
+	private func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
 		if textField.valid{
 			purchaseButton.isEnabled = true
 		}
@@ -92,5 +91,4 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 			
 		}
 	}
-
 }

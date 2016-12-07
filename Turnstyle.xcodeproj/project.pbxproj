@@ -18,7 +18,6 @@
 		1369B1D11DD91BC200A212E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1369B1D01DD91BC200A212E9 /* Assets.xcassets */; };
 		1369B1D41DD91BC200A212E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */; };
 		1369B1DC1DD91CA000A212E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DB1DD91CA000A212E9 /* Event.swift */; };
-		1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B1DD1DD91DC200A212E9 /* Ticket.swift */; };
 		1C464C941DF6931C0068C9AA /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C464C921DF6931C0068C9AA /* PaymentViewController.swift */; };
 		1C464C951DF6931C0068C9AA /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C464C931DF6931C0068C9AA /* PaymentViewController.xib */; };
 		7C1757481DDA331B00BECA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */; };
@@ -47,7 +46,6 @@
 		1369B1D31DD91BC200A212E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1369B1D51DD91BC200A212E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1369B1DB1DD91CA000A212E9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		1369B1DD1DD91DC200A212E9 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		1C464C921DF6931C0068C9AA /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		1C464C931DF6931C0068C9AA /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		1CB7ABA11DF7340300A29C60 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				1369B1CD1DD91BC200A212E9 /* Main.storyboard */,
 				1C464C921DF6931C0068C9AA /* PaymentViewController.swift */,
 				1C464C931DF6931C0068C9AA /* PaymentViewController.xib */,
-				1369B1DD1DD91DC200A212E9 /* Ticket.swift */,
 				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
 				7C6A76621DF64C4400D3DF27 /* TicketViewController.xib */,
 			);
@@ -284,7 +281,6 @@
 				7CE1E0531DEE384F007C6508 /* EventViewCell.swift in Sources */,
 				1369B1CC1DD91BC200A212E9 /* TicketsViewController.swift in Sources */,
 				136574FC1DF39B76004907AD /* CodeScannerViewController.swift in Sources */,
-				1369B1DE1DD91DC200A212E9 /* Ticket.swift in Sources */,
 				1369B1C81DD91BC200A212E9 /* AppDelegate.swift in Sources */,
 				1304DE081DE45F420003A7FC /* DatabaseOperations.swift in Sources */,
 				1C464C941DF6931C0068C9AA /* PaymentViewController.swift in Sources */,

@@ -15,7 +15,7 @@ class TicketsViewController: UIViewController {
 	var event: Event? = nil //this event is set before the view loads
 	var attendeeList: [String]? = nil
 	var attendedList: [String]? = nil
-	let storageRef = FIRStorage.storage().reference()
+	let storageRef = Globals.STORAGE_REF!
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var host: UILabel!
@@ -64,7 +64,6 @@ class TicketsViewController: UIViewController {
 		Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).observe(FIRDataEventType.value, with: { (snapshot) in
 //			let postDict = snapshot.value as? [String : AnyObject] ?? [:]
 //			self.attendedList = snapshot.value as? [String]
-			print("Hello")
 			self.ticketAction()
 		})
     }

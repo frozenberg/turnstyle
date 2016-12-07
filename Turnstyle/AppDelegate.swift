@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Turnstyle
 //
-//  Created by Fede Rozenberg on 11/13/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 

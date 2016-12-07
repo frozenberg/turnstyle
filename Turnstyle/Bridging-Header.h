@@ -2,7 +2,6 @@
 //  Bridging-Header.h
 //  Turnstyle
 //
-//  Created by Rohan Bhansali on 6/12/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 

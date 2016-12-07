@@ -2,7 +2,6 @@
 //  CodeScannerViewController.swift
 //  Turnstyle
 //
-//  Created by Mike Heavner on 12/3/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 

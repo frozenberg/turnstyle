@@ -33,11 +33,12 @@ class EventDetailView: UIViewController {
         scannerView.event = event
         self.navigationController?.pushViewController(scannerView, animated: true)
     }
-    
+	
     override func viewDidLoad() {
         style()
         loadImage()
         super.viewDidLoad()
+		//format data from firebase
         let cost_string = String(format:"%.2f",event!.ticketCost)
         name.text = event!.name
         host.text = "Host: \(event!.host)"
@@ -58,7 +59,8 @@ class EventDetailView: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+	
+	//Minor style tweaks to all outlets
     func style(){
         urllabel.font = UIFont(name:Globals.FONT, size:18.0)
         name.font = UIFont(name:Globals.FONT, size:18.0)

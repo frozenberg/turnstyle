@@ -10,12 +10,8 @@ import Firebase
 
 
 struct DatabaseOperations {
-    
-    
-    //param: populateArray(newEvents: [Event]) -> Void
-    //populates newEvents with the Firebase data
 	
-    
+    //get all events from firebase
     static func getEvents(populateArray: @escaping (_ newEvents: [(Event, Bool)]) -> Void){
         let EVENTS_REF = Globals.FIREBASE_REF?.child("events")
         
@@ -41,6 +37,7 @@ struct DatabaseOperations {
         })
     }
 	
+	//get specific event from firebase
 	static func getEvent(withId: String, populateArray: @escaping (_ newEvents: [Event]) -> Void){
 		let EVENT_REF = Globals.FIREBASE_REF?.child("events").child(withId)
 		print("Getting Event")

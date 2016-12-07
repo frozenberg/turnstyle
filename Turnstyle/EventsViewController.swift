@@ -34,10 +34,10 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.navigationController?.pushViewController(eventFormViewController, animated: true)
     }
     
-    func buttonAction(sender: UIButton!) {
-        print("Button tapped")
-    }
-    
+//    func buttonAction(sender: UIButton!) {
+//        print("Button tapped")
+//    }
+	
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventArray.count
     }
@@ -77,7 +77,8 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return myCell
         
     }
-    
+	
+	//redirect based on each user's relation to the event (host/guest)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if(eventArray[indexPath.row].attending == true){
@@ -102,7 +103,7 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tableViewOut.dataSource = self
         tableViewOut.delegate = self
         
-        
+        //get events from firebase
         DatabaseOperations.getEvents(populateArray:{(newEvents: [(Event, Bool)]) in
             self.eventArray = newEvents
             self.tableViewOut.reloadData()
@@ -115,12 +116,5 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

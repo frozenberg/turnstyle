@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 	
+	//Intercept open from URL and redirect to TicketViewController
 	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
 		if url.host == nil
 		{

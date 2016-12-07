@@ -43,12 +43,10 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 	func getStripeToken(card:STPCardParams) {
 		STPAPIClient.shared().createToken(withCard: card) { token, error in
 			if let token = token {
-//				iprint(token)
-//				self.errorLabel.text = "SUCCESFUL PAYMENT NOICE"
 				self.event?.attendeeList.append(Globals.USERID)
 				self.event?.ticketsLeft -= 1;
+				//Updtae firebase
 				Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).setValue(self.event?.toAnyObject())
-				//HEY ROSS DO YOUR SHIT HERE
 			} else {
 				self.errorLabel.text = error!.localizedDescription
 			}

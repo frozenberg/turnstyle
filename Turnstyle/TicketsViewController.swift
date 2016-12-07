@@ -43,6 +43,7 @@ class TicketsViewController: UIViewController {
     
     override func viewDidLoad() {
 		super.viewDidLoad()
+		//design and formatting tweaks
         attendeeList = (event?.attendeeList)!
 		attendedList = (event?.attendedList)!
         style()
@@ -59,28 +60,24 @@ class TicketsViewController: UIViewController {
         formatter.timeStyle = .short
         let newEventDate = formatter.string(from: event!.eventDate)
         date.text = "Date: \(newEventDate)"
-		
         url.text = "\((event?.url)!)"
+		
+		//Event Listener to remove QR Code if scanned
 		Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).observe(FIRDataEventType.value, with: { (snapshot) in
-//			let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-//			self.attendedList = snapshot.value as? [String]
 			self.ticketAction()
 		})
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		//get specific event from firebase
 		DatabaseOperations.getEvent(withId: (self.event?.eventId)!, populateArray:{(newEvents: [Event]) in
 			let requestedEventArray = newEvents
 			self.event = requestedEventArray[0]
 		})
-
 	}
 	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-	
+	//display correct action - QR Code, Purchase Ticket, isRedeemed
 	func ticketAction(){
 		if(attendedList?.contains(Globals.USERID))!{
 			purchaseBtn.isHidden = true
@@ -103,7 +100,7 @@ class TicketsViewController: UIViewController {
 			purchaseBtn.isHidden = false
 		}
 	}
-	
+	//change fonts
     func style(){
 		ticketAction()
         urllabel.font = UIFont(name:Globals.FONT, size:18.0)
@@ -115,9 +112,9 @@ class TicketsViewController: UIViewController {
         url.font = UIFont(name:Globals.FONT, size:18.0)
         detailDescription.font = UIFont(name:Globals.FONT, size:18.0)
     }
-    
+	
+	//load banner image
     func loadImage(){
-        
         let imageID:String = (event?.eventId)!
         let reference: FIRStorageReference = storageRef.child("eventpictures/\(imageID)")
         eventImage.sd_setImage(with: reference, placeholderImage: UIImage(imageLiteralResourceName: "635878692300261322-1064813558_28176-1"))

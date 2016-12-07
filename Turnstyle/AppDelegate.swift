@@ -38,11 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				let requestedEventArray = newEvents
 				let tv = TicketsViewController(nibName: "TicketViewController", bundle: nil)
 				tv.event = requestedEventArray[0]
-				self.window = UIWindow(frame: UIScreen.main.bounds)
-				let nav = UINavigationController()
-				nav.viewControllers = [tv]
-				self.window!.rootViewController = nav
-				self.window?.makeKeyAndVisible()
+                let root = self.window?.rootViewController as! UINavigationController
+                root.pushViewController(tv, animated: true)
+//                root.pushTicketsView(ticketsView: tv)
+                
+//				self.window = UIWindow(frame: UIScreen.main.bounds)
+//				let nav = UINavigationController()
+//				nav.viewControllers = [tv]
+//				self.window!.rootViewController = nav
+//				self.window?.makeKeyAndVisible()
 			})
 		}
 		return true

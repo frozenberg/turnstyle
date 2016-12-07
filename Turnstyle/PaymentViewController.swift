@@ -34,7 +34,6 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 
 	//Pay button tapped
 	@IBAction func payButtonTapped(_ sender: Any) {
-		print("payBtnTapped")
 		let card = paymentTextField.cardParams
 		getStripeToken(card: card)
 	}

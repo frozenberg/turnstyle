@@ -34,9 +34,6 @@ class EventsViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.navigationController?.pushViewController(eventFormViewController, animated: true)
     }
     
-//    func buttonAction(sender: UIButton!) {
-//        print("Button tapped")
-//    }
 	
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventArray.count

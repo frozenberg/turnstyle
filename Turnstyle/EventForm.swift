@@ -182,7 +182,6 @@ class EventForm: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIIm
         self.addDoneButtonOnNumpad()
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     
     func addDoneButtonOnNumpad() {

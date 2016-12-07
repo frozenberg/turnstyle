@@ -66,15 +66,6 @@ class TicketsViewController: UIViewController {
 		Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).observe(FIRDataEventType.value, with: { (snapshot) in
 			self.ticketAction()
 		})
-        
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(returnToEventView))
-        
-        self.navigationItem.rightBarButtonItem = backButton
-    }
-    
-    func returnToEventView(){
-        let eventsView = EventsViewController()
-        UIApplication.shared.keyWindow?.rootViewController = eventsView
     }
 	
 	override func viewWillAppear(_ animated: Bool) {

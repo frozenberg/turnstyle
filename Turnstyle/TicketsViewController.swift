@@ -14,6 +14,7 @@ class TicketsViewController: UIViewController {
 	
 	var event: Event? = nil //this event is set before the view loads
 	var attendeeList: [String]? = nil
+	var attendedList: [String]? = nil
 	let storageRef = FIRStorage.storage().reference()
 
     @IBOutlet weak var name: UILabel!
@@ -28,6 +29,7 @@ class TicketsViewController: UIViewController {
     
     @IBOutlet weak var eventImage: UIImageView!
 	
+	@IBOutlet weak var isScanned: UILabel!
     @IBOutlet weak var qrImage: UIImageView!
 	@IBOutlet weak var purchaseBtn: UIButton!
     
@@ -35,12 +37,14 @@ class TicketsViewController: UIViewController {
 	
 	@IBAction func purchaseTicket(_ sender: UIButton) {
 		let pvc=PaymentViewController()
+		pvc.event = event;
 		self.navigationController?.pushViewController(pvc, animated: true)
 	}
     
     override func viewDidLoad() {
 		super.viewDidLoad()
         attendeeList = (event?.attendeeList)!
+		attendedList = (event?.attendedList)!
         style()
         loadImage()
         let cost_string = String(format:"%.2f",event!.ticketCost)
@@ -55,31 +59,54 @@ class TicketsViewController: UIViewController {
         formatter.timeStyle = .short
         let newEventDate = formatter.string(from: event!.eventDate)
         date.text = "Date: \(newEventDate)"
-        
-        url.text = "\((event?.url)!)"
 		
+        url.text = "\((event?.url)!)"
+		Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).observe(FIRDataEventType.value, with: { (snapshot) in
+//			let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+//			self.attendedList = snapshot.value as? [String]
+			print("Hello")
+			self.ticketAction()
+		})
     }
-    
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		DatabaseOperations.getEvent(withId: (self.event?.eventId)!, populateArray:{(newEvents: [Event]) in
+			let requestedEventArray = newEvents
+			self.event = requestedEventArray[0]
+		})
+
+	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+	
+	func ticketAction(){
+		if(attendedList?.contains(Globals.USERID))!{
+			purchaseBtn.isHidden = true
+			qrImage.isHidden = true
+			isScanned.isHidden = false
+		}
+		else if(attendeeList?.contains(Globals.USERID))!{
+			purchaseBtn.isHidden = true
+			isScanned.isHidden = true
+			let eventIDString = event?.eventId
+			let userIDString = Globals.USERID
+			let qrCodeString = "\(eventIDString!)/\(userIDString)"
+			let qrCIImage = Globals.genQR(code: qrCodeString)
+			Globals.scaleAndDisplayQRCodeImage(QR_img: qrCIImage, forView: qrImage)
+			qrImage.isHidden = false
+		}
+		else{
+			qrImage.isHidden = true
+			isScanned.isHidden = true
+			purchaseBtn.isHidden = false
+		}
+	}
+	
     func style(){
-        if(attendeeList?.contains(Globals.USERID))!{
-            print("attending")
-            purchaseBtn.isHidden = true
-            let eventIDString = event?.eventId
-            let userIDString = Globals.USERID
-            let qrCodeString = "\(eventIDString!)/\(userIDString)"
-            let qrCIImage = Globals.genQR(code: qrCodeString)
-            Globals.scaleAndDisplayQRCodeImage(QR_img: qrCIImage, forView: qrImage)
-            qrImage.isHidden = false
-        }
-        else{
-            print("nah")
-            qrImage.isHidden = true
-            purchaseBtn.isHidden = false
-        }
+		ticketAction()
         urllabel.font = UIFont(name:Globals.FONT, size:18.0)
         name.font = UIFont(name:Globals.FONT, size:18.0)
         host.font = UIFont(name:Globals.FONT, size:18.0)

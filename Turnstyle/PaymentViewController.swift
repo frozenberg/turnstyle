@@ -15,6 +15,7 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 	@IBOutlet weak var purchaseButton: UIButton!
 	@IBOutlet weak var errorLabel: UILabel!
 	
+	var event: Event? = nil //this event is set before the view loads
 	var paymentTextField: STPPaymentCardTextField!
 	
     override func viewDidLoad() {
@@ -44,13 +45,12 @@ class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate, 
 		STPAPIClient.shared().createToken(withCard: card) { token, error in
 			if let token = token {
 				print(token)
-				self.errorLabel.text = "SUCCESFUL PAYMENT NOICE"
-				//TODO Succesful payment made, redirect to somewhere else
-				//Also add user to attendees
-				//Also reduce ticketsLeft by 1
+//				self.errorLabel.text = "SUCCESFUL PAYMENT NOICE"
+				self.event?.attendeeList.append(Globals.USERID)
+				self.event?.ticketsLeft -= 1;
+				Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).setValue(self.event?.toAnyObject())
 				//HEY ROSS DO YOUR SHIT HERE
 			} else {
-				//Maybe edit the errorLabel label in the xib file to look better
 				self.errorLabel.text = error!.localizedDescription
 			}
 		}

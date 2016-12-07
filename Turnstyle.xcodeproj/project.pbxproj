@@ -100,31 +100,31 @@
 		1369B1C61DD91BC100A212E9 /* Turnstyle */ = {
 			isa = PBXGroup;
 			children = (
-				7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */,
 				1369B1C71DD91BC200A212E9 /* AppDelegate.swift */,
-				1369B1C91DD91BC200A212E9 /* EventsViewController.swift */,
-				7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */,
-				7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */,
-				7C6A76621DF64C4400D3DF27 /* TicketViewController.xib */,
-				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
-				1369B1CD1DD91BC200A212E9 /* Main.storyboard */,
-				7CEA39111DDCD87D00599F5A /* EventForm.swift */,
-				7CE1E0511DEE384F007C6508 /* EventViewCell.swift */,
-				7CE1E0521DEE384F007C6508 /* EventViewCell.xib */,
-				7CEA39121DDCD87D00599F5A /* EventForm.xib */,
 				1369B1D01DD91BC200A212E9 /* Assets.xcassets */,
-				1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */,
-				1369B1D51DD91BC200A212E9 /* Info.plist */,
-				1369B1DB1DD91CA000A212E9 /* Event.swift */,
-				1369B1DD1DD91DC200A212E9 /* Ticket.swift */,
-				133618A31DE37531003277CB /* Globals.swift */,
-				1304DE071DE45F420003A7FC /* DatabaseOperations.swift */,
 				7C7236011DEDE73C007D0D17 /* BebasNeue.otf */,
+				1CB7ABA11DF7340300A29C60 /* Bridging-Header.h */,
 				136574FA1DF39B76004907AD /* CodeScannerViewController.swift */,
 				136574FB1DF39B76004907AD /* CodeScannerViewController.xib */,
+				1304DE071DE45F420003A7FC /* DatabaseOperations.swift */,
+				1369B1C91DD91BC200A212E9 /* EventsViewController.swift */,
+				1369B1DB1DD91CA000A212E9 /* Event.swift */,
+				7C1FC9541DE251CB007DEFA0 /* EventDetailView.swift */,
+				7C1FC9551DE251CB007DEFA0 /* EventDetailView.xib */,
+				7CEA39111DDCD87D00599F5A /* EventForm.swift */,
+				7CEA39121DDCD87D00599F5A /* EventForm.xib */,
+				7CE1E0511DEE384F007C6508 /* EventViewCell.swift */,
+				7CE1E0521DEE384F007C6508 /* EventViewCell.xib */,
+				133618A31DE37531003277CB /* Globals.swift */,
+				7C1757471DDA331B00BECA1E /* GoogleService-Info.plist */,
+				1369B1D51DD91BC200A212E9 /* Info.plist */,
+				1369B1D21DD91BC200A212E9 /* LaunchScreen.storyboard */,
+				1369B1CD1DD91BC200A212E9 /* Main.storyboard */,
 				1C464C921DF6931C0068C9AA /* PaymentViewController.swift */,
 				1C464C931DF6931C0068C9AA /* PaymentViewController.xib */,
-				1CB7ABA11DF7340300A29C60 /* Bridging-Header.h */,
+				1369B1DD1DD91DC200A212E9 /* Ticket.swift */,
+				1369B1CB1DD91BC200A212E9 /* TicketsViewController.swift */,
+				7C6A76621DF64C4400D3DF27 /* TicketViewController.xib */,
 			);
 			path = Turnstyle;
 			sourceTree = "<group>";
@@ -417,6 +417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SEZ5F74454;
 				INFOPLIST_FILE = Turnstyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.style.turn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SEZ5F74454;
 				INFOPLIST_FILE = Turnstyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.style.turn;
 				PRODUCT_NAME = "$(TARGET_NAME)";

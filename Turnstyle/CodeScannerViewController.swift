@@ -26,7 +26,7 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
 
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
-        
+		
         messageLabel.isHidden = true
         
         let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -105,19 +105,18 @@ class CodeScannerViewController: UIViewController, AVCaptureMetadataOutputObject
             }
         }
         if (isValid){
-            foundValidTicket()
+			foundValidTicket(id: codeArray[USER_ID_INDEX])
         }else{
             foundInvalidTicket()
         }
     }
     
-    func foundValidTicket(){
+	func foundValidTicket(id: String){
         messageLabel.text = "Ticket Redeemed!"
         messageLabel.isHidden = false
         self.view.bringSubview(toFront: messageLabel)
-        //TODO add some form of db interaction to mark the ticket as redeemed
-        
-        //no clue if this works, should restart capture session
+		self.event?.attendedList.append(id)
+		Globals.FIREBASE_REF?.child("events").child((self.event?.eventId)!).setValue(self.event?.toAnyObject())
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.captureSession.startRunning()
             self.messageLabel.isHidden = true

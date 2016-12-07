@@ -2,7 +2,7 @@
 //  Event.swift
 //  Turnstyle
 //
-//  Created by Fede Rozenberg on 11/13/16.
+//  Created by Ross Arkin on 11/13/16.
 //  Copyright © 2016 6164 Productions. All rights reserved.
 //
 
@@ -24,7 +24,8 @@ struct Event{
     var createdDate : Date
     var hostId : String
     var attendeeList : [String]
-    
+	var attendedList : [String]
+	
     //constructor for Event from known Event details
     //for entry into Firebase
     init(cost: Double, ticketsLeft: Int, host: String, name: String, location: String, eventDate: Date, description: String, url: String){
@@ -41,6 +42,7 @@ struct Event{
         self.createdDate = Date()
         self.hostId = Globals.USERID
         self.attendeeList = [Globals.USERID]
+		self.attendedList = [Globals.USERID]
     }
     
     //constructor for Events from FIRDataSnapshot (reconstruct Firebase data into Event struct)
@@ -73,6 +75,7 @@ struct Event{
         
         self.hostId = snapshotValue["hostId"] as! String
         self.attendeeList = snapshotValue["attendeeList"] as! [String]
+		self.attendedList = snapshotValue["attendedList"] as! [String]
     }
     
     mutating func setId(id: String){
@@ -93,7 +96,8 @@ struct Event{
             "url" : url,
             "createdDate" : createdDate.description,
             "hostId" : hostId,
-            "attendeeList" : attendeeList
+            "attendeeList" : attendeeList,
+			"attendedList" : attendedList
         ]
     }
     
